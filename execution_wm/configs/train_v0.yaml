@@ -1,0 +1,38 @@
+# V0 训练配置 —— Execution-Aware World Model 第一阶段
+
+seed: 42
+
+dataset:
+  dataset_dir: /media/hdd1/yuhang/datasets/execution_wm/v0
+  history_s: 1.0              # history 长度 L = 1 秒（first_work.md §7）
+  hz: 20                      # 数据频率
+  horizons_s: [0.5, 1.0, 2.0] # 预测 horizon：10 / 20 / 40 steps
+  train_horizon_s: 2.0        # 训练用最大 horizon（评估时逐段切分）
+
+  # episode-level split（first_work.md §14）
+  val_fraction: 0.1
+  test_id_fraction: 0.1
+  # OOD：指定 condition 整组留出（未见过的摩擦/执行器范围）
+  ood_conditions: [friction_vlow, actuator_low]
+  # probe episodes 不进训练，只做 matched-command 评估
+  exclude_probe_from_train: true
+
+model:
+  # 可选: action_only | direct | context
+  name: context
+  hidden_dims: [256, 256]
+  gru_hidden: 128
+  context_dim: 8              # c_t 维度（first_work.md §10），可改
+  predict_uncertainty: false  # §13：V0 关闭，仅预留结构
+
+train:
+  batch_size: 256
+  lr: 1.0e-3
+  epochs: 100
+  early_stop_patience: 15
+  huber_delta: 1.0
+  device: cuda
+  num_workers: 4
+
+output:
+  exp_dir: /media/hdd1/yuhang/checkpoints/execution_wm/v0

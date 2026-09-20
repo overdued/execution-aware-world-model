@@ -1,0 +1,120 @@
+# V0 数据采集配置 —— Execution-Aware World Model 第一阶段
+# 所有扰动范围集中在此文件，不散落在 Python 代码里（见 first_work.md §5）
+
+seed: 42
+
+sim:
+  num_envs: 32                # 并行环境数（每个 env 独立产 episode）
+  control_dt: 0.02            # 50 Hz 控制频率（与 locomotion policy 训练一致）
+  output_hz: 20               # 数据集统一输出 20 Hz
+  decimation: 4               # sim dt = 0.005 * 4 = 0.02
+
+episode:
+  max_length_s: 20.0          # episode 最长时长
+  min_keep_s: 5.0             # 早停（摔倒）episode 低于此长度丢弃
+  terminated_keep_s: 2.0      # 摔倒 episode 至少保留长度（标记 termination_reason）
+
+command:
+  # 取值范围 = controller limits * limit_fraction（limit 运行时从 env 读取，不硬编码）
+  limit_fraction: [0.6, 0.8]  # 每段命令在 limits 的 60%~80% 之间采样
+  segment_duration_s: [0.5, 2.0]
+  include_backward: true
+  include_lateral: true
+  include_rotation: true
+  include_combination: true
+
+# ---------------------------------------------------------------
+# 四类扰动条件（first_work.md §5）
+# friction / actuator_scale 可以是标量（固定值）或 [lo, hi]（每 episode 采样）
+# disturbance.force_range_n: 外力幅值采样范围（牛顿）
+# ---------------------------------------------------------------
+conditions:
+  normal:                     # A. 正常
+    count: 30
+    friction: 1.0
+    actuator_scale: 1.0
+    disturbance: false
+
+  friction_mid:               # B. 摩擦扰动（train 可见）
+    count: 10
+    friction: 0.6
+    actuator_scale: 1.0
+    disturbance: false
+
+  friction_low:               # B. 摩擦扰动（train 可见）
+    count: 10
+    friction: 0.3
+    actuator_scale: 1.0
+    disturbance: false
+
+  friction_vlow:              # B. 极低摩擦 —— OOD test 专用
+    count: 10
+    friction: 0.15
+    actuator_scale: 1.0
+    disturbance: false
+
+  actuator_mid:               # C. 执行器退化（train 可见）
+    count: 10
+    friction: 1.0
+    actuator_scale: 0.7
+    disturbance: false
+
+  actuator_low:               # C. 执行器退化 —— OOD test 专用
+    count: 10
+    friction: 1.0
+    actuator_scale: 0.5
+    disturbance: false
+
+  disturbance:                # D. 外力扰动
+    count: 20
+    friction: 1.0
+    actuator_scale: 1.0
+    disturbance: true
+    disturbance_force_range_n: [30.0, 60.0]
+    disturbance_resample_s: [0.5, 1.0]   # 每 0.5~1s 换随机方向
+
+# ---------------------------------------------------------------
+# Matched Command 实验（first_work.md §6）
+# 同一组 probe 命令在三种执行条件下重复，命令保持完全一致
+# 格式: [[持续秒数, [vx, vy, wz]], ...]
+# ---------------------------------------------------------------
+probes:
+  probe_1_straight:
+    - [8.0, [0.7, 0.0, 0.0]]
+  probe_2_accel_decel:
+    - [2.0, [0.4, 0.0, 0.0]]
+    - [2.0, [0.7, 0.0, 0.0]]
+    - [2.0, [0.1, 0.0, 0.0]]
+    - [2.0, [-0.4, 0.0, 0.0]]
+    - [2.0, [0.0, 0.0, 0.0]]
+  probe_3_turn:
+    - [3.0, [0.5, 0.0, 0.7]]
+    - [3.0, [0.5, 0.0, -0.7]]
+    - [2.0, [0.5, 0.0, 0.0]]
+  probe_4_lateral:
+    - [3.0, [0.0, 0.6, 0.0]]
+    - [3.0, [0.0, -0.6, 0.0]]
+    - [2.0, [0.4, 0.0, 0.0]]
+
+probe_conditions:             # probes 只跑这三种物理条件
+  normal:
+    friction: 1.0
+    actuator_scale: 1.0
+    disturbance: false
+  low_friction:
+    friction: 0.3
+    actuator_scale: 1.0
+    disturbance: false
+  degraded_actuator:
+    friction: 1.0
+    actuator_scale: 0.6
+    disturbance: false
+probe_repeats: 3              # 每个 probe × 条件 重复次数
+
+output:
+  dataset_dir: /media/hdd1/yuhang/datasets/execution_wm/v0
+  policy_checkpoint: /home/yuhang/IsaacLab/logs/rsl_rl/unitree_go2_flat/2026-09-20_22-52-26/model_299.pt
+
+sanity:
+  # §17.9: friction 变化必须造成可测量的 execution mismatch
+  min_residual_increase_frac: 0.20   # friction_low 的 |r| 均值至少比 normal 高 20%
