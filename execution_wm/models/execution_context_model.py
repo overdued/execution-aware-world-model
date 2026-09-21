@@ -23,9 +23,22 @@ class ExecutionContextModel(nn.Module):
         self.predictor = ExecutionPredictor(
             64, context_dim, horizon, hidden_dims, predict_uncertainty)
 
+    # ---- 可拆分接口（context swap 实验用，§4.3）----
+    def encode_state(self, history_proprio):
+        """z = state latent，取 history 最后一帧（当前时刻 proprio）。"""
+        return self.state_proj(history_proprio[:, -1])
+
+    def encode_context(self, history_proprio, history_action):
+        """c = C(history)，只用 <=t 的数据。"""
+        return self.context_encoder(history_proprio, history_action)
+
+    def predict_execution(self, z, c, future_action):
+        """r_hat = G(z, c, future_command)。"""
+        return self.predictor(z, c, future_action)
+
     def forward(self, history_proprio, history_action, current_state, future_action, **kwargs):
-        c = self.context_encoder(history_proprio, history_action)
+        c = self.encode_context(history_proprio, history_action)
         s = self.state_proj(current_state)
-        out = self.predictor(s, c, future_action)
+        out = self.predict_execution(s, c, future_action)
         out["context"] = c
         return out
