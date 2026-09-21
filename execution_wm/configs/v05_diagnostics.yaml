@@ -1,0 +1,38 @@
+# V0.5 Diagnostic Stage 配置（second_work.md）
+# 纯后验诊断：不训练、不采数、不改模型。只读现有 checkpoint/dataset/pairs。
+
+seed: 42
+dataset_dir: /media/hdd1/yuhang/datasets/execution_wm/v0
+dataset_dirs:
+  - /media/hdd1/yuhang/datasets/execution_wm/v0
+  - /media/hdd1/yuhang/datasets/execution_wm/v0_controlled_probes
+condition_groups:
+  "1.0": normal
+  "0.3": friction_low
+  "0.15": friction_vlow
+exp_dir: /media/hdd1/yuhang/checkpoints/execution_wm/v0
+swap_dir: /media/hdd1/yuhang/checkpoints/execution_wm/v0/context_swap_v2
+out_dir: /home/yuhang/cvpr_embed/results/v0_5_diagnostics
+train_config: /home/yuhang/cvpr_embed/execution_wm/configs/train_v0.yaml
+model: context
+
+hz: 20
+history_s: 1.0
+horizon_s: 2.0
+
+cluster_bootstrap:
+  n_bootstrap: 5000
+  ci: 0.95
+  # cluster = (source_episode, target_episode)；v0 probe 无 seed metadata（§4.1 回退规则）
+
+transition:
+  tau_u: 0.1                  # 命令变化阈值（与 v2 一致）
+  windows_s: [0.25, 0.5, 1.0] # sensitivity check（§6.2）
+
+calibration:
+  # Task C 用 episode-level test 划分上的原生预测（correct context）
+  conditions: [normal, friction_mid, friction_low, friction_vlow]
+  max_windows_per_episode: 40
+
+affine:
+  fit_split: val              # 只用 validation split 拟合（§7.1）
