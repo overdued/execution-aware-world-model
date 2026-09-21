@@ -1,7 +1,10 @@
 # 工作区说明（cvpr_embed）
 
 这是 yuhang 的 Execution-Aware World Model 研究工作区。当前任务见 `first_work.md`（第一阶段实验规范）。
-串流修复记录见 `docs/streaming_fix.md`。**V0 实验结果见 `docs/experiment_v0_summary.md`**（2026-09-21 完成 Step 1–12）。
+串流修复记录见 `docs/streaming_fix.md`。V0 实验结果见 `docs/experiment_v0_summary.md`（2026-09-21 完成 Step 1–12）。
+**第二阶段 Context Swap Test 已完成（2026-09-21，NO-GO/校准失败型）**：报告在
+`/media/hdd1/yuhang/checkpoints/execution_wm/v0/context_swap_v2/report/`（CONTEXT_SWAP_REPORT.md + GO_NO_GO.md），
+代码在 `execution_wm/context_swap/`。下一步（需人工确认）：扩数据后重跑 swap test。
 
 ## 环境（服务器 10.20.30.50，RTX 4090，驱动 535.309.01）
 
