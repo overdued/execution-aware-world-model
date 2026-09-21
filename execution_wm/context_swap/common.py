@@ -14,6 +14,30 @@ from execution_wm.eval.evaluate_execution import load_model
 VEL_NAMES = ["vx", "vy", "wz"]
 
 
+def discover_all(cfg):
+    """从 cfg 的全部 dataset_dirs 发现 probe episodes，返回 {uid: ep_entry}。
+
+    uid = f"d{数据集序号}_ep{episode_id:05d}" —— 不同数据集 episode_id 会撞，必须加前缀。
+    同时在 ep_entry["meta"]["cond_group"] 写入按 friction 映射的统一条件名。
+    """
+    dirs = cfg.get("dataset_dirs") or [cfg["dataset_dir"]]
+    groups = {float(k): v for k, v in cfg["condition_groups"].items()}
+    out = {}
+    for di, d in enumerate(dirs):
+        for e in discover_episodes(d):
+            m = e["meta"]
+            if m.get("episode_type") != "probe":
+                continue
+            fr = round(float(m["friction"]), 2)
+            if fr not in groups:
+                continue
+            m["cond_group"] = groups[fr]
+            m["dataset_idx"] = di
+            uid = f"d{di}_ep{int(m['episode_id']):05d}"
+            out[uid] = e
+    return out
+
+
 def load_cfg(config_path):
     with open(config_path) as f:
         return yaml.safe_load(f)

@@ -14,8 +14,7 @@ import os
 
 import numpy as np
 
-from execution_wm.context_swap.common import EpisodeData, load_cfg, out_subdir
-from execution_wm.data.dataset import discover_episodes, split_episodes
+from execution_wm.context_swap.common import EpisodeData, discover_all, load_cfg, out_subdir
 
 # proprio 40 维内各组偏移（与 PROPRIO_KEYS 顺序一致）
 SL = {"lin_vel": slice(0, 3), "ang_vel": slice(3, 6), "gravity": slice(6, 9),
@@ -34,13 +33,11 @@ def state_distance(pa, pb, weights):
 
 
 def build_pairs(cfg):
-    dc_eps = discover_episodes(cfg["dataset_dir"])
-    # probe episodes 单独一组（与训练 split 无关，直接用全部 probe）
-    probes = [e for e in dc_eps if e["meta"].get("episode_type") == "probe"]
+    """{(probe_name, cond_group): [(uid, EpisodeData)]}，pool 全部 dataset_dirs。"""
     by_key = {}
-    for e in probes:
+    for uid, e in discover_all(cfg).items():
         m = e["meta"]
-        by_key.setdefault((m["probe_name"], m["condition"]), []).append(EpisodeData(e))
+        by_key.setdefault((m["probe_name"], m["cond_group"]), []).append((uid, EpisodeData(e)))
     return by_key
 
 
@@ -62,8 +59,8 @@ def pair_rows(cfg, kind, cond_a, cond_b, by_key):
     for pname in probe_names:
         eps_a = by_key.get((pname, cond_a), [])
         eps_b = by_key.get((pname, cond_b), []) if kind == "cross" else eps_a
-        for i, ea in enumerate(eps_a):
-            for j, eb in enumerate(eps_b):
+        for i, (uid_a, ea) in enumerate(eps_a):
+            for j, (uid_b, eb) in enumerate(eps_b):
                 if kind == "same" and j <= i:
                     continue  # 同条件配对去重，且排除自己配自己
                 for t0 in iter_windows(ea, eb, L, H, stride):
@@ -78,7 +75,7 @@ def pair_rows(cfg, kind, cond_a, cond_b, by_key):
                         "kind": kind,
                         "probe": pname,
                         "cond_A": cond_a, "cond_B": cond_b,
-                        "ep_A": ea.meta["episode_id"], "ep_B": eb.meta["episode_id"],
+                        "ep_A": uid_a, "ep_B": uid_b,
                         "t0": t0, "t_rel_s": round(t0 / cfg["hz"], 3),
                         "cmd_mismatch": cmd_mm,
                         "D_state": d_state,
