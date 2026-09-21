@@ -1,7 +1,7 @@
 # 工作区说明（cvpr_embed）
 
 这是 yuhang 的 Execution-Aware World Model 研究工作区。当前任务见 `first_work.md`（第一阶段实验规范）。
-串流修复记录见 `docs/streaming_fix.md`。
+串流修复记录见 `docs/streaming_fix.md`。**V0 实验结果见 `docs/experiment_v0_summary.md`**（2026-09-21 完成 Step 1–12）。
 
 ## 环境（服务器 10.20.30.50，RTX 4090，驱动 535.309.01）
 
