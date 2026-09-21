@@ -1,0 +1,7 @@
+{
+  "max_abs_diff_r_hat": 0.0,
+  "max_abs_diff_e_hat": 0.0,
+  "max_abs_diff_state_latent": 0.0,
+  "pass": true,
+  "note": "纯接口重构，未改任何 checkpoint 参数。"
+}

@@ -1,0 +1,35 @@
+{
+  "encoder_input_keys": [
+    "base_linear_velocity_body",
+    "base_angular_velocity",
+    "projected_gravity",
+    "imu_linear_acceleration",
+    "joint_position",
+    "joint_velocity",
+    "feet_contact",
+    "history_action(commanded velocity)"
+  ],
+  "forbidden_fields_in_encoder_source": {
+    "friction": false,
+    "actuator": false,
+    "disturbance": false,
+    "condition": false,
+    "terrain": false,
+    "future_execution": false,
+    "future_residual": false
+  },
+  "pass": true,
+  "note": "PROPRIO_KEYS 全部是机载传感器量（速度/角速度/重力投影/IMU/关节/足端接触），不含任何仿真 metadata；metadata 仅用于 pair selection 与可视化。",
+  "causality": {
+    "history_indices": [
+      11,
+      30
+    ],
+    "future_indices": [
+      31,
+      70
+    ],
+    "pass": true,
+    "note": "c_t = GRU(proprio[t0-L+1..t0], cmd[t0-L+1..t0])，GRU 因果；不读取 t+1..t+H 任何数据。"
+  }
+}

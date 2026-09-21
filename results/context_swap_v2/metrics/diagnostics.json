@@ -1,0 +1,42 @@
+{
+  "regime_teleport": {
+    "friction_low->normal": {
+      "D_after": 1.0731591979301993,
+      "native_E_correct_target": 1.0545876990387042,
+      "ratio": 1.0176101986666672
+    },
+    "friction_vlow->normal": {
+      "D_after": 1.0716302397540796,
+      "native_E_correct_target": 1.0545876990387042,
+      "ratio": 1.0161603826129493
+    },
+    "normal->friction_low": {
+      "D_after": 1.3882222330613492,
+      "native_E_correct_target": 1.3494892616129182,
+      "ratio": 1.028701948618796
+    },
+    "normal->friction_vlow": {
+      "D_after": 2.023705026234422,
+      "native_E_correct_target": 1.976110870191984,
+      "ratio": 1.0240847600002392
+    }
+  },
+  "corr_P_target_vs_D_state": {
+    "friction_low->normal": 0.0024570477646747844,
+    "friction_vlow->normal": -0.10304377734998588,
+    "normal->friction_low": -0.17477115740890573,
+    "normal->friction_vlow": 0.04229527272078765
+  },
+  "residual_magnitude_calibration": {
+    "pred_with_c_normal": 0.05030620098114014,
+    "pred_with_c_low": 0.10667822510004044,
+    "actual_normal": 0.06723293662071228,
+    "actual_low": 0.07602813094854355,
+    "note": "c_low 预测的 |r| 是否相对真实 low 条件过大/过小（校准性）"
+  },
+  "z_already_encodes_condition": {
+    "note": "V0 test_id residual MAE: direct(无 c)=0.1291 vs context=0.1278，差 1%——分布内 z/history 几乎已含全部可预测信息，c 的边际贡献小。这解释了为何 swap 误差由 target 条件原生误差主导。",
+    "direct_test_id_mae": 0.1291,
+    "context_test_id_mae": 0.1278
+  }
+}

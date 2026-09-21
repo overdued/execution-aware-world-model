@@ -1,0 +1,42 @@
+# Context Swap Test 配置（03.1 v2）
+# 输出目录: /media/hdd1/yuhang/checkpoints/execution_wm/v0/context_swap_v2/
+
+seed: 42
+dataset_dir: /media/hdd1/yuhang/datasets/execution_wm/v0
+dataset_dirs:                       # pool 多数据集（uid 带数据集前缀）
+  - /media/hdd1/yuhang/datasets/execution_wm/v0
+  - /media/hdd1/yuhang/datasets/execution_wm/v0_controlled_probes
+condition_groups:                   # friction -> 统一条件名（v0 low_friction 与 controlled friction_low 同为 0.3）
+  "1.0": normal
+  "0.3": friction_low
+  "0.15": friction_vlow
+exp_dir: /media/hdd1/yuhang/checkpoints/execution_wm/v0
+out_dir: /media/hdd1/yuhang/checkpoints/execution_wm/v0/context_swap_v2
+model: context
+
+hz: 20
+history_s: 1.0          # L = 20 帧
+horizon_s: 2.0          # H = 40 帧（与训练一致）
+
+pairs:
+  source_target:
+    - [normal, friction_low]        # 主实验（§12 双向，run 时展开）
+    - [normal, friction_vlow]       # §15.2 secondary（controlled probe 补采）
+  time_stride_s: 1.0                # 同一 episode pair 内取窗间隔
+  # D_state = w_v*|Δv| + w_w*|Δω| + w_g*|Δg_proj| + w_q*|Δq_joint|
+  state_weights: {lin_vel: 1.0, ang_vel: 1.0, gravity: 1.0, joint_pos: 0.5}
+  max_command_mismatch: 0.05        # 同一 probe 同相对时刻，命令应完全一致
+  # state 距离阈值：p90=1.721（pair_quality.csv 分布，只削掉尾部最不 match 的 10%）
+  max_state_distance: 1.75
+
+shuffle_seeds: 5                    # §7.3 shuffle context 重复次数
+
+transition:
+  tau_u: 0.1                        # §11 command change 阈值
+  # 窗内最大 |u_t - u_{t-1}| > tau_u → transition window
+
+bootstrap:
+  n_resamples: 10000
+  ci: 0.95
+
+sanity_max_pairs: 50                # Step 5 先跑的对数上限（0=全部）
