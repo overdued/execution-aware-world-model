@@ -139,15 +139,17 @@ class CommandScheduler:
 
 # ---------------------------------------------------------------------------
 def set_friction(env, friction):
+    """直接写 PhysX material buffer 设定整机摩擦（v2.3.2 的 randomize_rigid_body_material
+    是 ManagerTermBase 类不能直接调用，绕过它）。"""
     dyn = max(0.05, 0.7 * friction)
-    mdp.randomize_rigid_body_material(
-        env, torch.arange(env.num_envs, device=env.device),
-        static_friction_range=(friction, friction),
-        dynamic_friction_range=(dyn, dyn),
-        restitution_range=(0.0, 0.0),
-        asset_cfg=SceneEntityCfg("robot", body_names=".*"),
-        num_buckets=1,
-    )
+    robot = env.scene["robot"]
+    view = robot.root_physx_view
+    materials = view.get_material_properties()          # (num_instances, max_shapes, 3) CPU
+    env_ids = torch.arange(env.num_envs, dtype=torch.long)
+    materials[env_ids, :, 0] = friction                 # static friction
+    materials[env_ids, :, 1] = dyn                      # dynamic friction
+    materials[env_ids, :, 2] = 0.0                      # restitution
+    view.set_material_properties(materials, env_ids)
 
 
 class ActuatorScaler:
@@ -208,7 +210,7 @@ class Disturber:
 
 
 # ---------------------------------------------------------------------------
-FOOT_EXPR = ".*FOOT"
+FOOT_EXPR = ".*_foot"
 
 
 def capture_step(env, cmd_np, disturber, t_abs, ep_time, foot_ids, sensor_foot_ids):
@@ -251,8 +253,7 @@ def save_episode(out_dir, ep_id, meta, buffer, control_dt, output_hz):
     T = len(buffer["timestamp"])
     if T == 0:
         return None
-    arrs = {k: np.stack(v, axis=0) for k, v in buffer.items()}              # [T,N=1,...]
-    arrs = {k: v[:, 0] for k, v in arrs.items()}
+    arrs = {k: np.stack(v, axis=0) for k, v in buffer.items()}              # [T,...]（单 env 值已在写入时取出）
     # 50Hz -> 20Hz 最近邻降采样（§4）
     dur = T * control_dt
     target_t = np.arange(0, dur, 1.0 / output_hz)
@@ -365,8 +366,7 @@ def main():
         )
         disturber.enabled = bool(dist_cfg.get("disturbance", False))
 
-        obs, _ = env.get_observations()
-        unwrapped.reset()
+        obs = env.get_observations()
 
         # 逐 env episode 状态
         buffers = [dict() for _ in range(unwrapped.num_envs)]
