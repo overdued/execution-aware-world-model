@@ -38,6 +38,8 @@ Mac 客户端连 `10.20.30.50`。黑屏排查见 `docs/streaming_fix.md`；保�
 
 - `~/IsaacLab/scripts/tutorials/` 的示例脚本是无限循环，headless 下不会自己退出
 - headless 脚本结束时 `simulation_app.close()` 可能挂起（已知 bug），工作已完成直接杀进程或 `os._exit(0)`
+- **`os._exit(0)` 不 flush stdout** —— 后台跑 collector/training 时必须 `PYTHONUNBUFFERED=1`，否则日志丢尾部
+- **collector 的 `episode_length_s` 必须远大于采集 schedule**（现 1e6s）：env 内建 timeout 会在 schedule 中段触发 done，短 episode 被丢弃→补新目标→失控循环（2026-09-21 修，见 commit bc219cc）
 - locomotion controller checkpoint：`~/IsaacLab/logs/rsl_rl/unitree_go2_flat/2026-09-20_22-52-26/model_299.pt`
 - **这台机器不要同时开两个 AI 会话干活**（会互相 kill 进程）
 

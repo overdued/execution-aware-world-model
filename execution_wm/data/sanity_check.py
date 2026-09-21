@@ -50,9 +50,11 @@ def main():
         # 1. cmd 与 actual 同 frame：|actual| 应在命令量级的合理倍数内（粗略检查）
         spd = np.linalg.norm(d["execution"][:, :2], axis=-1).max()
         check(spd < 5.0, f"{tag}: velocity 单位合理 (max {spd:.2f} m/s)", failures)
-        # 4. contact 合理：大部分时间在站立/行走，4 足接触不全为 0
+        # 4. contact 合理：大部分时间在站立/行走，4 足接触不全为 0。
+        #    摔倒(terminated) episode 翻滚时接触少是合法数据，放宽到>0（仍抓传感器失效）
         frac_contact = (d["feet_contact"].sum(axis=-1) > 0).mean()
-        check(frac_contact > 0.7, f"{tag}: contact 合理 ({frac_contact:.2f})", failures)
+        thr = 0.05 if m.get("termination_reason") == "terminated" else 0.7
+        check(frac_contact > thr, f"{tag}: contact 合理 ({frac_contact:.2f})", failures)
         # 6. episode boundary：时长与 metadata 一致
         dur = d["timestamp"][-1] - d["timestamp"][0]
         check(abs(dur - m["duration_s"]) < 1.0, f"{tag}: episode 边界一致", failures)

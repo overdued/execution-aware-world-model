@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
 import yaml  # noqa: E402
 
-from .dataset import discover_episodes, load_episode  # noqa: E402
+from ..data.dataset import discover_episodes, load_episode  # noqa: E402
 
 VEL = [("vx", 0), ("vy", 1), ("wz", 2)]
 
