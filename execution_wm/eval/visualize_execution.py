@@ -30,9 +30,8 @@ VEL_NAMES = ["vx", "vy", "wz"]
 
 def rollout_episode(model, model_name, d, hz, L_s, H_s, device):
     """在单个 episode 上做滑动窗预测，返回 (t, cmd, exec, pred_exec, resid, pred_resid)（H=单步前预测拼接首步）。"""
-    ds = WindowDataset([{"path": None, "meta": {}}], hz=hz, history_s=L_s, horizon_s=H_s)
-    # 手动构造窗口（直接用 episode 数据）
-    L, H = ds.L, ds.H
+    L = int(round(L_s * hz))
+    H = int(round(H_s * hz))
     proprio = episode_proprio(d)
     cmd, exe, res = d["cmd_vel"], d["execution"], d["residual"]
     preds, targets, ts = [], [], []

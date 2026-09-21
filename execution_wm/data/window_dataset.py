@@ -11,9 +11,17 @@
 """
 import numpy as np
 import torch
-from torch.utils.data import Dataset
+from torch.utils.data import Dataset, default_collate
 
 from .dataset import episode_proprio, load_episode
+
+
+def window_collate(batch):
+    """metadata 含 None 值（random episode 的 probe_name），不能走 default_collate。"""
+    metas = [b.pop("metadata") for b in batch]
+    out = default_collate(batch)
+    out["metadata"] = metas
+    return out
 
 
 class WindowDataset(Dataset):
@@ -23,7 +31,7 @@ class WindowDataset(Dataset):
         self.cache = cache
         self.samples = []   # (ep_idx, start_t)
         self._data = []
-        for i, e in enumerate(episodes):
+        for e in episodes:
             d = load_episode(e["path"])
             T = len(d["timestamp"])
             if T < self.L + self.H:
@@ -38,6 +46,7 @@ class WindowDataset(Dataset):
                 })
             else:
                 self._data.append(e)
+            i = len(self._data) - 1  # 用 _data 内的位置，跳过的 episode 不会造成错位
             for t0 in range(self.L - 1, T - self.H):
                 self.samples.append((i, t0))
 

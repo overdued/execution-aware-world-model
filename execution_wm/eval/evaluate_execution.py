@@ -16,7 +16,7 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(_
 sys.path.insert(0, PROJECT_ROOT)
 
 from execution_wm.data.dataset import discover_episodes, split_episodes  # noqa: E402
-from execution_wm.data.window_dataset import WindowDataset  # noqa: E402
+from execution_wm.data.window_dataset import WindowDataset, window_collate  # noqa: E402
 from execution_wm.train.train_execution import MODEL_REGISTRY, compute_metrics, evaluate  # noqa: E402
 
 
@@ -48,7 +48,7 @@ def main():
     for split_name in ("test_id", "test_ood"):
         ds = WindowDataset(splits[split_name], hz=dc["hz"], history_s=dc["history_s"],
                            horizon_s=dc["train_horizon_s"])
-        loader = DataLoader(ds, batch_size=512, shuffle=False)
+        loader = DataLoader(ds, batch_size=512, shuffle=False, collate_fn=window_collate)
         for mn in args.models:
             model = load_model(cfg["output"]["exp_dir"], mn, H, device)
             results.setdefault(split_name, {})[mn] = evaluate(model, mn, loader, device)

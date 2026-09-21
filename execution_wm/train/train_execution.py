@@ -20,7 +20,7 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(_
 sys.path.insert(0, PROJECT_ROOT)
 
 from execution_wm.data.dataset import discover_episodes, split_episodes, PROPRIO_DIM  # noqa: E402
-from execution_wm.data.window_dataset import WindowDataset  # noqa: E402
+from execution_wm.data.window_dataset import WindowDataset, window_collate  # noqa: E402
 from execution_wm.models.baseline_action import ActionOnlyBaseline  # noqa: E402
 from execution_wm.models.baseline_direct import DirectPredictor  # noqa: E402
 from execution_wm.models.execution_context_model import ExecutionContextModel  # noqa: E402
@@ -113,6 +113,7 @@ def main():
         loaders[key] = DataLoader(ds, batch_size=cfg["train"]["batch_size"],
                                   shuffle=(key == "train"),
                                   num_workers=cfg["train"]["num_workers"],
+                                  collate_fn=window_collate,
                                   drop_last=(key == "train"))
     print(f"[train:{model_name}] sizes: {sizes}")
 
