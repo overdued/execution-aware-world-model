@@ -73,6 +73,19 @@ conditions:
     disturbance_force_range_n: [30.0, 60.0]
     disturbance_resample_s: [0.5, 1.0]   # 每 0.5~1s 换随机方向
 
+  # ---- probe 专用物理条件（count=0，只跑 matched probe，§6）----
+  low_friction:
+    count: 0
+    friction: 0.3
+    actuator_scale: 1.0
+    disturbance: false
+
+  degraded_actuator:
+    count: 0
+    friction: 1.0
+    actuator_scale: 0.6
+    disturbance: false
+
 # ---------------------------------------------------------------
 # Matched Command 实验（first_work.md §6）
 # 同一组 probe 命令在三种执行条件下重复，命令保持完全一致

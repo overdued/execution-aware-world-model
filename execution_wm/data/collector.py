@@ -78,8 +78,9 @@ class Go2ExecCollectEnvCfg(UnitreeGo2FlatEnvCfg):
         cmd.rel_standing_envs = 0.0
         cmd.resampling_time_range = (1.0e6, 1.0e6)  # 禁用自动重采样
         cmd.debug_vis = False
-        # episode 长度覆盖
-        self.episode_length_s = 25.0
+        # episode 长度覆盖：必须远大于采集 schedule（20s），否则 env 内建 timeout
+        # 会在 episode 中段触发 done，造成"存一个丢一个"的失控循环（2026-09-21 修复）
+        self.episode_length_s = 1.0e6
         # 加 IMU（§4 数据记录）
         self.scene.imu = ImuCfg(prim_path="{ENV_REGEX_NS}/Robot/base")
 
@@ -439,6 +440,9 @@ def main():
                         "terminated" if bool(dones[e]) else "schedule_end")
                     n = len(buffers[e]["timestamp"])
                     dur_s = n * control_dt
+                    print(f"[dbg] env{e} ep{metas[e]['episode_id']} done: reason={reason} "
+                          f"dur={dur_s:.2f}s ep_t={ep_t:.2f} sched_dur={sched_dur:.2f} "
+                          f"dones={bool(dones[e])} to={bool(time_outs[e])}")
                     keep_min = cfg["episode"]["terminated_keep_s"] if reason == "terminated" \
                         else cfg["episode"]["min_keep_s"]
                     if dur_s >= keep_min:
