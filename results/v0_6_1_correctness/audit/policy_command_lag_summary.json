@@ -1,0 +1,17 @@
+{
+ "Q1_step_vx": {
+  "n": 200,
+  "consumed_equals_requested_same_tick": 196,
+  "consumed_equals_prev_tick": 199
+ },
+ "Q3_turn": {
+  "n": 200,
+  "consumed_equals_requested_same_tick": 196,
+  "consumed_equals_prev_tick": 199
+ },
+ "Q2_step_vy": {
+  "n": 200,
+  "consumed_equals_requested_same_tick": 196,
+  "consumed_equals_prev_tick": 199
+ }
+}

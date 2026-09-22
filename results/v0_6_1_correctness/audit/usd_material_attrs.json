@@ -1,0 +1,32 @@
+{
+ "/World/ground/terrain/physicsMaterial": {
+  "outputs:displacement": "None",
+  "outputs:surface": "None",
+  "outputs:volume": "None",
+  "physics:density": "0.0",
+  "physics:dynamicFriction": "1.0",
+  "physics:restitution": "0.0",
+  "physics:staticFriction": "1.0",
+  "physxMaterial:compliantContactAccelerationSpring": "False",
+  "physxMaterial:compliantContactDamping": "0.0",
+  "physxMaterial:compliantContactStiffness": "0.0",
+  "physxMaterial:dampingCombineMode": "average",
+  "physxMaterial:frictionCombineMode": "multiply",
+  "physxMaterial:restitutionCombineMode": "multiply"
+ },
+ "/physicsScene/defaultMaterial": {
+  "outputs:displacement": "None",
+  "outputs:surface": "None",
+  "outputs:volume": "None",
+  "physics:density": "0.0",
+  "physics:dynamicFriction": "1.0",
+  "physics:restitution": "0.0",
+  "physics:staticFriction": "1.0",
+  "physxMaterial:compliantContactAccelerationSpring": "False",
+  "physxMaterial:compliantContactDamping": "0.0",
+  "physxMaterial:compliantContactStiffness": "0.0",
+  "physxMaterial:dampingCombineMode": "average",
+  "physxMaterial:frictionCombineMode": "multiply",
+  "physxMaterial:restitutionCombineMode": "multiply"
+ }
+}

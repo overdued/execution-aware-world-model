@@ -1,0 +1,11 @@
+{
+ "test": "T08_causal_input_and_independent_future",
+ "status": "PASS",
+ "detail": {
+  "n_windows": 288,
+  "max_input_tick_minus_origin": 0,
+  "min_future_tick_minus_origin": 2,
+  "label_identity_max_err": 5.960464477539063e-08,
+  "future_command_perturbation_leaks_to_labels": false
+ }
+}

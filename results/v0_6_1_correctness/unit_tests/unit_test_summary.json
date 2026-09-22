@@ -1,0 +1,213 @@
+{
+ "n_total": 8,
+ "n_pass": 8,
+ "n_fail": 0,
+ "results": [
+  {
+   "test": "T01_support_pair_integrity",
+   "status": "PASS",
+   "detail": {
+    "pairing_violations_new": 0,
+    "n_trials": 2000,
+    "old_impl_mismatch_rate_on_same_toy": 0.983
+   }
+  },
+  {
+   "test": "T02_privileged_labels_do_not_enter_inputs",
+   "status": "PASS",
+   "detail": {
+    "deterministic": true,
+    "proprio_dim": 40,
+    "friction_in_input": false,
+    "label_in_input": false
+   }
+  },
+  {
+   "test": "T03_label_identity_full",
+   "status": "PASS",
+   "detail": {
+    "n_episodes": 240,
+    "n_points": 69612,
+    "max_identity_err": 5.960464477539063e-08,
+    "max_err_per_axis_vx_vy_wz": [
+     5.960464477539063e-08,
+     5.960464477539063e-08,
+     5.960464477539063e-08
+    ],
+    "worst_file": "ep_00163.20hz.npz",
+    "tolerance": 1e-05,
+    "old_pipeline_max_err_reference": 1.120208
+   }
+  },
+  {
+   "test": "T04_command_boundary_integer_tick",
+   "status": "PASS",
+   "detail": {
+    "q3_events_episode_ticks": [
+     50,
+     75,
+     125,
+     175
+    ],
+    "2.5s_hold_tick_new": 125,
+    "2.5s_cmd_new": -0.8,
+    "2.5s_hold_tick_old_float": 124,
+    "2.5s_cmd_old_float": 0.800000011920929,
+    "aligned_grid_points": 40,
+    "aligned_mismatch_new": 0,
+    "hold_tick_mismatch_old_vs_new": 36,
+    "grid_points_with_cmd_value_diff_old_vs_new": 3,
+    "event_checks": {
+     "1.0s": {
+      "grid_k": 20,
+      "hold_tick": 50,
+      "cmd_wz": 0.0,
+      "expected": 0.0,
+      "ok": true
+     },
+     "1.5s": {
+      "grid_k": 30,
+      "hold_tick": 75,
+      "cmd_wz": 0.800000011920929,
+      "expected": 0.8,
+      "ok": false
+     },
+     "2.5s": {
+      "grid_k": 50,
+      "hold_tick": 125,
+      "cmd_wz": -0.800000011920929,
+      "expected": -0.8,
+      "ok": false
+     },
+     "3.5s": {
+      "grid_k": 70,
+      "hold_tick": 175,
+      "cmd_wz": 0.0,
+      "expected": 0.0,
+      "ok": true
+     }
+    },
+    "long_horizon_ticks": 1000,
+    "float_jitter_tests": 3
+   }
+  },
+  {
+   "test": "T05_feature_schema_persistence",
+   "status": "PASS",
+   "detail": {
+    "schema": "go2_proprio_v1",
+    "execution_indices": [
+     0,
+     1,
+     5
+    ],
+    "extract_of_[11,12,13,21,22,23]": [
+     11.0,
+     12.0,
+     23.0
+    ],
+    "old_slice_wrong": [
+     11.0,
+     12.0,
+     13.0
+    ],
+    "old_third_value_is": "vz(13) 而非 wz(23)"
+   }
+  },
+  {
+   "test": "T06_split_and_donor_lineage",
+   "status": "PASS",
+   "detail": {
+    "splits": {
+     "A_unseen_anchor_seen_family": {
+      "n_episodes": 36,
+      "anchors": [
+       "AQ6",
+       "AQ7"
+      ],
+      "families": [
+       "Q1_straight",
+       "Q2_lateral",
+       "Q3_turn"
+      ]
+     },
+     "B_seen_anchor_unseen_family": {
+      "n_episodes": 30,
+      "anchors": [
+       "AQ0",
+       "AQ1",
+       "AQ2",
+       "AQ3",
+       "AQ4"
+      ],
+      "families": [
+       "Q4_combo"
+      ]
+     },
+     "C_unseen_anchor_unseen_family": {
+      "n_episodes": 12,
+      "anchors": [
+       "AQ6",
+       "AQ7"
+      ],
+      "families": [
+       "Q4_combo"
+      ]
+     },
+     "supp_AQ5xQ4": {
+      "n_episodes": 6,
+      "anchors": [
+       "AQ5"
+      ],
+      "families": [
+       "Q4_combo"
+      ]
+     }
+    },
+    "pairwise_empty": [
+     "A_unseen_anchor_seen_family∩B_seen_anchor_unseen_family=∅",
+     "A_unseen_anchor_seen_family∩C_unseen_anchor_unseen_family=∅",
+     "B_seen_anchor_unseen_family∩C_unseen_anchor_unseen_family=∅"
+    ],
+    "legacy_overlap_n_episodes": 12,
+    "donor_table_hash": "bf7338a5e1622e59",
+    "donor_lineage_keys": [
+     "donor_condition",
+     "donor_episode_id",
+     "donor_origin_tick",
+     "donor_session_id",
+     "donor_split",
+     "query_donor_window_id"
+    ]
+   }
+  },
+  {
+   "test": "T07_fixed_lead_vs_prefix",
+   "status": "PASS",
+   "detail": {
+    "toy_fixed_lead_2s": 1.0,
+    "toy_prefix_2s": 0.025000000000000005,
+    "equal": false,
+    "lead_indices": {
+     "0.25s": 4,
+     "0.5s": 9,
+     "1.0s": 19,
+     "2.0s": 39
+    },
+    "old_mae_rows_was": "prefix (err[:, :k].mean)"
+   }
+  },
+  {
+   "test": "T08_causal_input_and_independent_future",
+   "status": "PASS",
+   "detail": {
+    "n_windows": 288,
+    "max_input_tick_minus_origin": 0,
+    "min_future_tick_minus_origin": 2,
+    "label_identity_max_err": 5.960464477539063e-08,
+    "future_command_perturbation_leaks_to_labels": false
+   }
+  }
+ ],
+ "gate": "未过 T01/T03/T04/T05/T06 不允许正式训练"
+}

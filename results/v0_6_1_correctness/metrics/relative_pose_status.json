@@ -1,0 +1,8 @@
+{
+ "relative_pose_full_trajectory": "NOT_RUN",
+ "reason": "需要体速度与姿态联合积分，未在 PRE_REGISTRATION 中定义",
+ "net_yaw": "RAN",
+ "net_yaw_truth_source": "lb_yaw（合法化四元数：符号连续 + 归一化）",
+ "raw_quaternion_illegal_max_norm_dev": 0.5000427537490804,
+ "raw_quaternion_illegal_points": 4541
+}

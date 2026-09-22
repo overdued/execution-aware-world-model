@@ -1,0 +1,17 @@
+{
+ "test": "T03_label_identity_full",
+ "status": "PASS",
+ "detail": {
+  "n_episodes": 240,
+  "n_points": 69612,
+  "max_identity_err": 5.960464477539063e-08,
+  "max_err_per_axis_vx_vy_wz": [
+   5.960464477539063e-08,
+   5.960464477539063e-08,
+   5.960464477539063e-08
+  ],
+  "worst_file": "ep_00163.20hz.npz",
+  "tolerance": 1e-05,
+  "old_pipeline_max_err_reference": 1.120208
+ }
+}

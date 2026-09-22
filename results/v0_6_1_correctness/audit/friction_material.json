@@ -1,0 +1,135 @@
+{
+ "robot_material_write_readback": {
+  "normal": {
+   "written_static": 1.0,
+   "written_dynamic": 0.7,
+   "n_shapes_per_env": 27,
+   "robot_static_friction_mean": 1.0,
+   "robot_static_friction_min": 1.0,
+   "robot_static_friction_max": 1.0,
+   "robot_dynamic_friction_mean": 0.7000000476837158,
+   "robot_dynamic_friction_min": 0.699999988079071,
+   "robot_dynamic_friction_max": 0.699999988079071,
+   "robot_restitution_mean": 0.0,
+   "robot_restitution_min": 0.0,
+   "robot_restitution_max": 0.0,
+   "robot_static_equals_dynamic": false
+  },
+  "friction_mid": {
+   "written_static": 0.6,
+   "written_dynamic": 0.42,
+   "n_shapes_per_env": 27,
+   "robot_static_friction_mean": 0.6000000238418579,
+   "robot_static_friction_min": 0.6000000238418579,
+   "robot_static_friction_max": 0.6000000238418579,
+   "robot_dynamic_friction_mean": 0.42000001668930054,
+   "robot_dynamic_friction_min": 0.41999998688697815,
+   "robot_dynamic_friction_max": 0.41999998688697815,
+   "robot_restitution_mean": 0.0,
+   "robot_restitution_min": 0.0,
+   "robot_restitution_max": 0.0,
+   "robot_static_equals_dynamic": false
+  },
+  "friction_low": {
+   "written_static": 0.3,
+   "written_dynamic": 0.21,
+   "n_shapes_per_env": 27,
+   "robot_static_friction_mean": 0.30000001192092896,
+   "robot_static_friction_min": 0.30000001192092896,
+   "robot_static_friction_max": 0.30000001192092896,
+   "robot_dynamic_friction_mean": 0.21000000834465027,
+   "robot_dynamic_friction_min": 0.20999999344348907,
+   "robot_dynamic_friction_max": 0.20999999344348907,
+   "robot_restitution_mean": 0.0,
+   "robot_restitution_min": 0.0,
+   "robot_restitution_max": 0.0,
+   "robot_static_equals_dynamic": false
+  }
+ },
+ "ground_material_cfg": {
+  "static_friction": 1.0,
+  "dynamic_friction": 1.0,
+  "restitution": 0.0,
+  "friction_combine_mode": "multiply",
+  "restitution_combine_mode": "multiply",
+  "source": "scene.terrain.physics_material cfg"
+ },
+ "combine_mode_runtime_probe": {
+  "physx_material_schemas": [
+   {
+    "prim": "/physicsScene",
+    "schema": "MaterialBindingAPI"
+   },
+   {
+    "prim": "/physicsScene/defaultMaterial",
+    "schema": "PhysicsMaterialAPI"
+   },
+   {
+    "prim": "/physicsScene/defaultMaterial",
+    "schema": "PhysxMaterialAPI"
+   },
+   {
+    "prim": "/World/ground/terrain/GroundPlane/CollisionPlane",
+    "schema": "MaterialBindingAPI"
+   },
+   {
+    "prim": "/World/ground/terrain/Environment",
+    "schema": "MaterialBindingAPI"
+   },
+   {
+    "prim": "/World/ground/terrain/Environment/Geometry",
+    "schema": "MaterialBindingAPI"
+   },
+   {
+    "prim": "/World/ground/terrain/physicsMaterial",
+    "schema": "PhysicsMaterialAPI"
+   },
+   {
+    "prim": "/World/ground/terrain/physicsMaterial",
+    "schema": "PhysxMaterialAPI"
+   },
+   {
+    "prim": "/Visuals/Command/velocity_goal/arrow",
+    "schema": "MaterialBindingAPI"
+   },
+   {
+    "prim": "/Visuals/Command/velocity_goal/arrow/Cylinder",
+    "schema": "MaterialBindingAPI"
+   },
+   {
+    "prim": "/Visuals/Command/velocity_goal/arrow/Cone",
+    "schema": "MaterialBindingAPI"
+   },
+   {
+    "prim": "/Visuals/Command/velocity_current/arrow",
+    "schema": "MaterialBindingAPI"
+   },
+   {
+    "prim": "/Visuals/Command/velocity_current/arrow/Cylinder",
+    "schema": "MaterialBindingAPI"
+   },
+   {
+    "prim": "/Visuals/Command/velocity_current/arrow/Cone",
+    "schema": "MaterialBindingAPI"
+   }
+  ],
+  "n_found": 14
+ },
+ "combine_mode_status": "READ (见 combine_mode_runtime_probe)",
+ "effective_friction_if_average": {
+  "note": "仅当 combine=average 且 ground static=dynamic=1 时成立；未从引擎读回 -> 不可当实测",
+  "static_effective": {
+   "normal": 1.0,
+   "friction_mid": 0.8,
+   "friction_low": 0.65
+  },
+  "dynamic_effective": {
+   "normal": 0.85,
+   "friction_mid": 0.71,
+   "friction_low": 0.605
+  },
+  "ground_static": 1.0,
+  "ground_dynamic": 1.0
+ },
+ "naming_rule": "档位一律按 written_static / written_dynamic 命名，不使用'真实摩擦'"
+}

@@ -1,0 +1,56 @@
+{
+ "split_report": {
+  "A_unseen_anchor_seen_family": {
+   "n_episodes": 36,
+   "anchors": [
+    "AQ6",
+    "AQ7"
+   ],
+   "families": [
+    "Q1_straight",
+    "Q2_lateral",
+    "Q3_turn"
+   ]
+  },
+  "B_seen_anchor_unseen_family": {
+   "n_episodes": 30,
+   "anchors": [
+    "AQ0",
+    "AQ1",
+    "AQ2",
+    "AQ3",
+    "AQ4"
+   ],
+   "families": [
+    "Q4_combo"
+   ]
+  },
+  "C_unseen_anchor_unseen_family": {
+   "n_episodes": 12,
+   "anchors": [
+    "AQ6",
+    "AQ7"
+   ],
+   "families": [
+    "Q4_combo"
+   ]
+  },
+  "supp_AQ5xQ4": {
+   "n_episodes": 6,
+   "anchors": [
+    "AQ5"
+   ],
+   "families": [
+    "Q4_combo"
+   ]
+  },
+  "pairwise_empty": [
+   "A_unseen_anchor_seen_family∩B_seen_anchor_unseen_family=∅",
+   "A_unseen_anchor_seen_family∩C_unseen_anchor_unseen_family=∅",
+   "B_seen_anchor_unseen_family∩C_unseen_anchor_unseen_family=∅"
+  ],
+  "train_val_vs_eval": "all empty"
+ },
+ "legacy_overlap_n_episodes": 12,
+ "legacy_note": "legacy held_anchor 含 Q4 96/384 窗，与 held_family 重叠 12 episode；仅历史兼容，不作为独立确认"
+}

@@ -1,0 +1,16 @@
+{
+ "model": "M0",
+ "seed": 42,
+ "best_val": 0.005528277200129297,
+ "best_epoch": 42,
+ "epochs": 58,
+ "gpu_hours": 0.0003861632612016466,
+ "n_train_windows": 720,
+ "n_val_windows": 144,
+ "n_params": 226808,
+ "window_manifest_hash": "245f1e23c43b1c48",
+ "support_bank_size": 716,
+ "target": "residual_label (B2 \u4fee\u590d)",
+ "data_dir": "/media/hdd1/yuhang/datasets/execution_wm/v0_6_1",
+ "derive_version": "v061.1"
+}

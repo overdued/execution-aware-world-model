@@ -1,0 +1,10 @@
+{
+ "test": "T02_privileged_labels_do_not_enter_inputs",
+ "status": "PASS",
+ "detail": {
+  "deterministic": true,
+  "proprio_dim": 40,
+  "friction_in_input": false,
+  "label_in_input": false
+ }
+}

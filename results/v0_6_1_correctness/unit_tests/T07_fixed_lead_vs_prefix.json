@@ -1,0 +1,16 @@
+{
+ "test": "T07_fixed_lead_vs_prefix",
+ "status": "PASS",
+ "detail": {
+  "toy_fixed_lead_2s": 1.0,
+  "toy_prefix_2s": 0.025000000000000005,
+  "equal": false,
+  "lead_indices": {
+   "0.25s": 4,
+   "0.5s": 9,
+   "1.0s": 19,
+   "2.0s": 39
+  },
+  "old_mae_rows_was": "prefix (err[:, :k].mean)"
+ }
+}

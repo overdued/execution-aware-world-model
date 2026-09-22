@@ -1,0 +1,52 @@
+{
+ "test": "T04_command_boundary_integer_tick",
+ "status": "PASS",
+ "detail": {
+  "q3_events_episode_ticks": [
+   50,
+   75,
+   125,
+   175
+  ],
+  "2.5s_hold_tick_new": 125,
+  "2.5s_cmd_new": -0.8,
+  "2.5s_hold_tick_old_float": 124,
+  "2.5s_cmd_old_float": 0.800000011920929,
+  "aligned_grid_points": 40,
+  "aligned_mismatch_new": 0,
+  "hold_tick_mismatch_old_vs_new": 36,
+  "grid_points_with_cmd_value_diff_old_vs_new": 3,
+  "event_checks": {
+   "1.0s": {
+    "grid_k": 20,
+    "hold_tick": 50,
+    "cmd_wz": 0.0,
+    "expected": 0.0,
+    "ok": true
+   },
+   "1.5s": {
+    "grid_k": 30,
+    "hold_tick": 75,
+    "cmd_wz": 0.800000011920929,
+    "expected": 0.8,
+    "ok": false
+   },
+   "2.5s": {
+    "grid_k": 50,
+    "hold_tick": 125,
+    "cmd_wz": -0.800000011920929,
+    "expected": -0.8,
+    "ok": false
+   },
+   "3.5s": {
+    "grid_k": 70,
+    "hold_tick": 175,
+    "cmd_wz": 0.0,
+    "expected": 0.0,
+    "ok": true
+   }
+  },
+  "long_horizon_ticks": 1000,
+  "float_jitter_tests": 3
+ }
+}

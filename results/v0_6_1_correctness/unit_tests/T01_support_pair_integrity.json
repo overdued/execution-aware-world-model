@@ -1,0 +1,9 @@
+{
+ "test": "T01_support_pair_integrity",
+ "status": "PASS",
+ "detail": {
+  "pairing_violations_new": 0,
+  "n_trials": 2000,
+  "old_impl_mismatch_rate_on_same_toy": 0.983
+ }
+}

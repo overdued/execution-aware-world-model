@@ -1,0 +1,20 @@
+{
+ "tag": "OLD_MODEL_NEW_EVALUATION_ONLY",
+ "old_ckpt_root": "/media/hdd1/yuhang/checkpoints/execution_wm/v0_6",
+ "old_ckpt_sha256_16": {
+  "M0_s42": "38b136805d819160",
+  "M0_s43": "86cdf77644915fd4",
+  "M0_s44": "181fb62cacd738c3",
+  "M1_s42": "e62ec87e40761a64",
+  "M1_s43": "e98817895a43d3c2",
+  "M1_s44": "01afc8196193d198",
+  "M2_s42": "f5ccfaabdc6b8dff",
+  "M2_s43": "7b3e23eb86a13880",
+  "M2_s44": "91f5c2f136024f1c",
+  "M3_s42": "933f8fce4ed184a0",
+  "M3_s43": "221f491244d8f3c6",
+  "M3_s44": "8d9fc263d2b035d1"
+ },
+ "new_labels": "/media/hdd1/yuhang/datasets/execution_wm/v0_6_1",
+ "note": "旧模型 + 新标签；只说明评价变化，不能代替正确标签重训。逐元素预测已写入 R1 流程（本表为汇总）。"
+}

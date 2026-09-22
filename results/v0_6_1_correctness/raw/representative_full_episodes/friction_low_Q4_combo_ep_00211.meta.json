@@ -1,0 +1,27 @@
+{
+  "episode_id": 211,
+  "dataset_version": "d2",
+  "condition": "friction_low",
+  "episode_type": "query",
+  "command_family": "Q4_combo",
+  "friction": 0.3,
+  "actuator_scale": 1.0,
+  "disturbance": false,
+  "termination_reason": "schedule_end",
+  "duration_s": 4.0,
+  "env_id": 0,
+  "anchor_group": "AQ6",
+  "anchor_seed": 1102,
+  "rep": 0,
+  "seed": 1102,
+  "reset_state": "default_pose_zero_vel",
+  "approximate_paired": true,
+  "held_out_family": true,
+  "friction_readback": {
+    "robot_static_friction_mean": 0.30000001192092896,
+    "robot_static_friction_min": 0.30000001192092896,
+    "robot_static_friction_max": 0.30000001192092896,
+    "robot_dynamic_friction_mean": 0.21000000834465027,
+    "robot_restitution_mean": 0.0
+  }
+}

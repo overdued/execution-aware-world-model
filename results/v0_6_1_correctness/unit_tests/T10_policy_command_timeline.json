@@ -1,0 +1,52 @@
+{
+ "test": "T10_policy_command_timeline",
+ "status": "PASS",
+ "detail": {
+  "control_dt": 0.02,
+  "obs_dim": 48,
+  "cmd_slice": [
+   9,
+   12
+  ],
+  "policy_checkpoint": "/home/yuhang/IsaacLab/logs/rsl_rl/unitree_go2_flat/2026-09-20_22-52-26/model_299.pt",
+  "waves": {
+   "Q1_step_vx": {
+    "n_ticks": 200,
+    "consumed_eq_requested_same_tick": 196,
+    "consumed_eq_prev_tick": 199,
+    "n_events": 3,
+    "event_lags_ticks": [
+     1,
+     1,
+     1
+    ]
+   },
+   "Q3_turn": {
+    "n_ticks": 200,
+    "consumed_eq_requested_same_tick": 196,
+    "consumed_eq_prev_tick": 199,
+    "n_events": 3,
+    "event_lags_ticks": [
+     1,
+     1,
+     1
+    ]
+   },
+   "Q2_step_vy": {
+    "n_ticks": 200,
+    "consumed_eq_requested_same_tick": 196,
+    "consumed_eq_prev_tick": 199,
+    "n_events": 3,
+    "event_lags_ticks": [
+     1,
+     1,
+     1
+    ]
+   }
+  },
+  "verified_rule": "u_consumed[i] = u_requested[i-1]（精确 1 control tick = 0.02s）",
+  "execution_governing_command_lag_ticks": 2,
+  "raw_reuse_decision": "固定可验证规则 -> 旧 240 条 raw 无需重采；cmd_consumed 可由 cmd_ref 版本化恢复",
+  "gym_version": "1.2.1"
+ }
+}

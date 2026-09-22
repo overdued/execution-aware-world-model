@@ -1,0 +1,13 @@
+{
+ "test": "T09_pred_cache_consistency",
+ "status": "PASS",
+ "detail": {
+  "cache_sha256": "7faf77df24f59de739dbd68301545209b2f549b55dadeb5d537b7d7186276778",
+  "manifest_sha256": "7faf77df24f59de739dbd68301545209b2f549b55dadeb5d537b7d7186276778",
+  "match": true,
+  "n_cached_arrays": 160,
+  "bootstrap_reads_cache_only": true,
+  "forbidden_calls_found": [],
+  "note": "所有 summary/bootstrap 引用同一缓存；单次推理，不重抽 donor 重新推理"
+ }
+}

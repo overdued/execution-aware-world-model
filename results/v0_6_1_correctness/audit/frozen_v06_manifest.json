@@ -1,0 +1,34 @@
+{
+ "git_commit_v06": "d14842df1984842ce1579de8336b4b589bb24d0f",
+ "raw_index_sha256": "aeae0ce9b71745b99fcbcc9d7638f630f59fdc64dfb5bd05b65ab3dde5e754ab",
+ "n_raw_episodes": 240,
+ "raw_episode_sha256_sample": {
+  "ep_00160.npz": "1c7d7cb49c93ad4ae24c41b0b135e55bb17ed6113c77d084db3c0771fb21a3b1",
+  "ep_00161.npz": "05ef2ce6d56f60adf9fa5b44ebb3f022823f15e8ba2dff036c3f4d78f417456b",
+  "ep_00162.npz": "b445ad4072a1c0b31ea03c9b9ce49c532bff4768278c279dd3d4324c40c8eda7"
+ },
+ "old_20hz_dir": "/media/hdd1/yuhang/datasets/execution_wm/v0_6_sq",
+ "config_sha256": {
+  "execution_wm/configs/collect_v06_sq.yaml": "6da72c220501e97aa559d3fedd290154c68a2a264ad85534286f129ed22bcb54",
+  "execution_wm/configs/v06_validity.yaml": "9a9ab385396bb82459f6f8bc22ec6496ec3a543762bde9b0303deffb81625b8b"
+ },
+ "checkpoints": {
+  "M0_s42": "38b136805d819160a02f8a17332403682a13c0b93eff61acdd8d086759c3b311",
+  "M0_s43": "86cdf77644915fd4068be9c9a05d5c457c7da4b6b77fd117bf7761a6f3d7c2d9",
+  "M0_s44": "181fb62cacd738c3755cfe5e391c4e3bbb9f7ab908ab136f1453d3cae82ae032",
+  "M1_s42": "e62ec87e40761a6439c4c83452f8a86ccdb2f4c484837c9b12b51408e7ec48b3",
+  "M1_s43": "e98817895a43d3c2cf59897e12ed6230c6622baf8e7642477a9df4e28312af2a",
+  "M1_s44": "01afc8196193d198a65a49b06b1fd108cbd9251134e2cda8d0898978dc152786",
+  "M2_s42": "f5ccfaabdc6b8dff468e17f46a919244615fc374933e2935bc8875bdc2ddfcd5",
+  "M2_s43": "7b3e23eb86a13880c3039b4ec46a2d02b3796d22625feec2da24965c4882e9ee",
+  "M2_s44": "91f5c2f136024f1caa9aed3ff44e2cc6c394beb636c2fc27f0dc34ec941db57b",
+  "M3_s42": "933f8fce4ed184a02492f9334524944361ae9cd4e921eb95e0819368dd411035",
+  "M3_s43": "221f491244d8f3c6c5ea11ee46a64f3c3bc8751992a5b8cb9d9d24e87ec8ce73",
+  "M3_s44": "8d9fc263d2b035d1dc14289563d174df67dff721d97eb81343bcb3d9a2e9df90"
+ },
+ "versions": {
+  "torch": "2.7.0+cu126",
+  "numpy": "1.26.0",
+  "python": "3.11.16"
+ }
+}

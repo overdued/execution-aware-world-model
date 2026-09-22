@@ -1,0 +1,22 @@
+{
+ "config_sha256": {
+  "collect_v06_sq.yaml": "6da72c220501e97aa559d3fedd290154c68a2a264ad85534286f129ed22bcb54",
+  "v06_validity.yaml": "9a9ab385396bb82459f6f8bc22ec6496ec3a543762bde9b0303deffb81625b8b"
+ },
+ "git_commit_v06": "d14842df1984842ce1579de8336b4b589bb24d0f",
+ "versions": {
+  "torch": "2.7.0+cu126",
+  "numpy": "1.26.0",
+  "scipy": "1.15.3",
+  "python": "3.11.16"
+ },
+ "model_registry_source": "execution_wm/train/train_execution.py:28-32",
+ "model_classes": {
+  "action_only": "execution_wm/models/baseline_action.py",
+  "direct": "execution_wm/models/baseline_direct.py",
+  "context": "execution_wm/models/execution_context_model.py",
+  "predictor": "execution_wm/models/execution_predictor.py",
+  "context_encoder": "execution_wm/models/context_encoder.py"
+ },
+ "feature_schema": "execution_wm/validity_v061/schema.py:PROPRIO_SCHEMA"
+}
