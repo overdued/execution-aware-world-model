@@ -96,3 +96,15 @@
 ## 11. [非 bug] batched vs single GRU 前向 ~1e-4 差异
 
 cuDNN batch 算法差异，float32 精度内；对指标影响 <0.1%。记录以避免未来"复现不一致"误报。
+
+## 12. [阶段B 代码] derive_20hz labels 与 grid 尾部长度差 1（已修复，未影响任何训练）
+
+resample_poly 输出长度 ceil(n·2/5) 与 0.05s grid（arange 上界）在 episode 时长非 0.05
+整数倍时相差 1 个尾样本（初版 154 条中 20 条 lb_ 比 grid 短 1）。修复：labels 一律对齐
+到 inputs 网格长度（截断或末端 edge-hold），全量 240 条重派生后 misaligned=0。
+修复发生在任何训练/评估之前，无结果受影响。
+
+## 13. [阶段C 代码] train_sq/eval_sq 误从 execution_wm.models 导入 MODEL_REGISTRY（已修复）
+
+registry 实际定义在 execution_wm.train.train_execution（其 __init__.py 为空）。
+首个探测 run 启动即 ImportError，未产生任何训练结果；修正导入后 12 run 全部完成。

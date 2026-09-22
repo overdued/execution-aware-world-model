@@ -50,9 +50,16 @@ def derive(path):
            "cmd_vel": d["cmd_vel"][idx_hold].astype(np.float32)}
     for k in INPUT_KEYS:
         out[f"in_{k}"] = causal_lowpass(d[k].astype(np.float64), dt, FC)[idx_hold].astype(np.float32)
-    T20 = int(round(dur * 20))
+    # labels 版对齐到 inputs 网格：resample_poly 输出 j 对应 t=j*0.05（与 grid 同原点），
+    # 长度按 ceil(n*2/5)，与 grid 最多差 1 个尾样本 -> 截断或末端 edge-hold 补齐
+    T20 = len(grid)
     for k in LABEL_KEYS:
-        out[f"lb_{k}"] = resample_poly(d[k], 2, 5, axis=0)[:T20].astype(np.float32)
+        lb = resample_poly(d[k], 2, 5, axis=0)
+        if len(lb) >= T20:
+            lb = lb[:T20]
+        else:
+            lb = np.concatenate([lb, np.repeat(lb[-1:], T20 - len(lb), axis=0)], axis=0)
+        out[f"lb_{k}"] = lb.astype(np.float32)
     # execution/residual 同时给因果版（训练标签一致性可选）
     for k in ("execution", "residual"):
         out[f"in_{k}"] = causal_lowpass(d[k].astype(np.float64), dt, FC)[idx_hold].astype(np.float32)

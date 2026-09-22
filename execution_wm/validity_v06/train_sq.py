@@ -25,7 +25,7 @@ import torch
 import torch.nn as nn
 import yaml
 
-from execution_wm.models import MODEL_REGISTRY
+from execution_wm.train.train_execution import MODEL_REGISTRY
 
 SQ_DIR = "/media/hdd1/yuhang/datasets/execution_wm/v0_6_sq"
 OUT_ROOT = "/media/hdd1/yuhang/checkpoints/execution_wm/v0_6"
@@ -83,7 +83,8 @@ class SQWindowData:
                 self.samples.append((
                     proprio[t0 - L + 1:t0 + 1], cmd[t0 - L + 1:t0 + 1],
                     cmd[t0 + 1:t0 + 1 + H], res[t0 + 1:t0 + 1 + H],
-                    float(e["friction"]), e["condition"], int(e["episode_id"])))
+                    float(e["friction"]), e["condition"], int(e["episode_id"]),
+                    e.get("anchor_group") or f"SP{e.get('support_seed')}"))
 
     def __len__(self):
         return len(self.samples)
@@ -94,7 +95,7 @@ class SQWindowData:
         return (t([x[0] for x in s]), t([x[1] for x in s]), t([x[2] for x in s]),
                 t([x[3] for x in s]), torch.tensor([x[4] for x in s],
                 dtype=torch.float32, device=device),
-                [x[5] for x in s], [x[6] for x in s])
+                [x[5] for x in s], [x[6] for x in s], [x[7] for x in s])
 
 
 class SupportWindowBank:
@@ -182,7 +183,7 @@ def main():
         idx = rng.permutation(len(train_data))
         tot = 0.0
         for i in range(0, len(idx), bs):
-            hp, ha, fa, fr_lab, fric, conds, _ = train_data.batch(idx[i:i + bs], device)
+            hp, ha, fa, fr_lab, fric, conds, _, _a = train_data.batch(idx[i:i + bs], device)
             shp, sha = (bank.sample_batch(conds, rng, device) if bank else (None, None))
             r_hat = forward_model(args.model, model, hp, ha, fa, fric, model_aux,
                                   shp, sha)
@@ -196,7 +197,7 @@ def main():
         vtot = 0.0
         with torch.no_grad():
             for i in range(0, len(val_data), bs):
-                hp, ha, fa, fr_lab, fric, conds, _ = val_data.batch(
+                hp, ha, fa, fr_lab, fric, conds, _, _a = val_data.batch(
                     np.arange(i, min(i + bs, len(val_data))), device)
                 shp, sha = (bank.sample_batch(conds, rng, device) if bank else (None, None))
                 vtot += loss_fn(forward_model(args.model, model, hp, ha, fa, fric,

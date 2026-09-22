@@ -1,0 +1,4 @@
+ execution_wm/validity_v06/derive_20hz.py           |  11 +-
+ execution_wm/validity_v06/train_sq.py              |  11 +-
+ .../manifests/support_query_manifest.csv           | 578 ++++++++++++++++++++-
+ 3 files changed, 592 insertions(+), 8 deletions(-)

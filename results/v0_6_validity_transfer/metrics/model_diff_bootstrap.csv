@@ -1,0 +1,17 @@
+split,diff,mean,ci_low,ci_high,crosses_zero,n_windows,n_clusters
+held_anchor,M1-M0,-0.001379947760142386,-0.0021,-0.0006,False,384,48
+held_anchor,M2-M1,-0.002085659420117736,-0.0028,-0.0013,False,384,48
+held_anchor,M3-M1,-7.420237670885399e-05,-0.0001,-0.0,False,384,48
+held_anchor,M1-ccopy,-0.018999578431248665,-0.0271,-0.0118,False,384,48
+held_anchor,M1var_native-cross_support,-0.040592581033706665,-0.0445,-0.0369,False,384,48
+held_anchor,M1var_native-diff_condition,-0.04404183104634285,-0.0484,-0.04,False,384,48
+held_anchor,M1var_native-zero,-0.011273134499788284,-0.0146,-0.0081,False,384,48
+held_anchor,M1var_native-shuffle,-0.018891992047429085,-0.0216,-0.0162,False,384,48
+held_family,M1-M0,-0.002324828179553151,-0.0032,-0.0015,False,384,48
+held_family,M2-M1,-0.004894391167908907,-0.0058,-0.004,False,384,48
+held_family,M3-M1,-5.782413063570857e-05,-0.0001,-0.0,False,384,48
+held_family,M1-ccopy,-0.025718843564391136,-0.0361,-0.0148,False,384,48
+held_family,M1var_native-cross_support,-0.027151890099048615,-0.0299,-0.0247,False,384,48
+held_family,M1var_native-diff_condition,-0.02885005623102188,-0.0318,-0.0258,False,384,48
+held_family,M1var_native-zero,-0.003360214876011014,-0.0048,-0.0019,False,384,48
+held_family,M1var_native-shuffle,-0.009720666334033012,-0.0117,-0.0077,False,384,48

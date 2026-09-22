@@ -1,0 +1,23 @@
+{
+  "episode_id": 144,
+  "dataset_version": "d2",
+  "condition": "friction_mid",
+  "episode_type": "support",
+  "command_family": "random_dwell",
+  "friction": 0.6,
+  "actuator_scale": 1.0,
+  "disturbance": false,
+  "termination_reason": "schedule_end",
+  "duration_s": 8.0,
+  "env_id": 0,
+  "support_seed": 5000,
+  "seed": 5000,
+  "reset_state": "default_pose_zero_vel",
+  "friction_readback": {
+    "robot_static_friction_mean": 0.6000000238418579,
+    "robot_static_friction_min": 0.6000000238418579,
+    "robot_static_friction_max": 0.6000000238418579,
+    "robot_dynamic_friction_mean": 0.42000001668930054,
+    "robot_restitution_mean": 0.0
+  }
+}
