@@ -1,0 +1,22 @@
+# V0.6 阶段A 配置（纯离线审计；路径为解析后的绝对路径）
+out_dir: /home/yuhang/cvpr_embed/results/v0_6_validity_transfer
+seed: 42
+
+# 输入（只读）
+pred_cache: /home/yuhang/cvpr_embed/results/v0_5_diagnostics/raw/pair_pred_cache.npz
+pair_manifest: /home/yuhang/cvpr_embed/results/context_swap_v2/pairs/pair_manifest.csv
+pair_level_metrics: /home/yuhang/cvpr_embed/results/context_swap_v2/metrics/pair_level_metrics.csv
+per_axis_calibration: /home/yuhang/cvpr_embed/results/v0_5_diagnostics/calibration/per_axis_calibration.csv
+transition_window_manifest: /home/yuhang/cvpr_embed/results/v0_5_diagnostics/transition/transition_window_manifest.csv
+dataset_v0: /media/hdd1/yuhang/datasets/execution_wm/v0
+dataset_probes: /media/hdd1/yuhang/datasets/execution_wm/v0_controlled_probes
+checkpoint: /media/hdd1/yuhang/checkpoints/execution_wm/v0/context/best.pt
+train_config: /home/yuhang/cvpr_embed/execution_wm/configs/train_v0.yaml
+
+hz: 20
+history_s: 1.0
+horizon_s: 2.0
+
+node_bootstrap:
+  n_bootstrap: 2000
+  ci: 0.95

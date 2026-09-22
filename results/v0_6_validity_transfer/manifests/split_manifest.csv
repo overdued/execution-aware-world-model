@@ -1,0 +1,260 @@
+episode_uid,dataset_version,condition,episode_type,reset_anchor_group,train_val_test_role,seed,split_note
+d0_ep00003,d0,normal,random,d0:normal:env3:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00007,d0,normal,random,d0:normal:env7:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00030,d0,normal,probe,d0:normal:env30:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00031,d0,normal,probe,d0:normal:env31:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00032,d0,normal,probe,d0:normal:env3:chain1,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00033,d0,normal,probe,d0:normal:env7:chain1,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00034,d0,normal,probe,d0:normal:env30:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00035,d0,normal,probe,d0:normal:env31:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00026,d0,normal,random,d0:normal:env26:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00011,d0,normal,random,d0:normal:env11:chain0,val,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00020,d0,normal,random,d0:normal:env20:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00022,d0,normal,random,d0:normal:env22:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00006,d0,normal,random,d0:normal:env6:chain0,test_id,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00016,d0,normal,random,d0:normal:env16:chain0,test_id,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00014,d0,normal,random,d0:normal:env14:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00024,d0,normal,random,d0:normal:env24:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00004,d0,normal,random,d0:normal:env4:chain0,val,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00000,d0,normal,random,d0:normal:env0:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00010,d0,normal,random,d0:normal:env10:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00018,d0,normal,random,d0:normal:env18:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00021,d0,normal,random,d0:normal:env21:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00005,d0,normal,random,d0:normal:env5:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00019,d0,normal,random,d0:normal:env19:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00001,d0,normal,random,d0:normal:env1:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00009,d0,normal,random,d0:normal:env9:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00002,d0,normal,random,d0:normal:env2:chain0,val,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00025,d0,normal,random,d0:normal:env25:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00023,d0,normal,random,d0:normal:env23:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00029,d0,normal,random,d0:normal:env29:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00036,d0,normal,probe,d0:normal:env3:chain1,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00027,d0,normal,random,d0:normal:env27:chain0,test_id,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00015,d0,normal,random,d0:normal:env15:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00012,d0,normal,random,d0:normal:env12:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00017,d0,normal,random,d0:normal:env17:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00013,d0,normal,random,d0:normal:env13:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00028,d0,normal,random,d0:normal:env28:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00008,d0,normal,random,d0:normal:env8:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00037,d0,normal,probe,d0:normal:env7:chain1,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00038,d0,normal,probe,d0:normal:env30:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00039,d0,normal,probe,d0:normal:env31:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00040,d0,normal,probe,d0:normal:env26:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00041,d0,normal,probe,d0:normal:env11:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00090,d0,friction_mid,random,d0:friction_mid:env17:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00086,d0,friction_mid,random,d0:friction_mid:env13:chain0,val,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00084,d0,friction_mid,random,d0:friction_mid:env11:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00097,d0,friction_mid,random,d0:friction_mid:env24:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00094,d0,friction_mid,random,d0:friction_mid:env21:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00080,d0,friction_mid,random,d0:friction_mid:env7:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00101,d0,friction_mid,random,d0:friction_mid:env28:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00074,d0,friction_mid,random,d0:friction_mid:env1:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00073,d0,friction_mid,random,d0:friction_mid:env0:chain0,test_id,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00082,d0,friction_mid,random,d0:friction_mid:env9:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00088,d0,friction_mid,random,d0:friction_mid:env15:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00140,d0,friction_low,random,d0:friction_low:env26:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00142,d0,friction_low,random,d0:friction_low:env28:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00117,d0,friction_low,random,d0:friction_low:env3:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00116,d0,friction_low,random,d0:friction_low:env2:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00121,d0,friction_low,random,d0:friction_low:env7:chain0,val,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00120,d0,friction_low,random,d0:friction_low:env6:chain0,test_id,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00127,d0,friction_low,random,d0:friction_low:env13:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00123,d0,friction_low,random,d0:friction_low:env9:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00137,d0,friction_low,random,d0:friction_low:env23:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00135,d0,friction_low,random,d0:friction_low:env21:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00155,d0,friction_vlow,random,d0:friction_vlow:env0:chain0,test_ood,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00172,d0,friction_vlow,random,d0:friction_vlow:env17:chain0,test_ood,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00167,d0,friction_vlow,random,d0:friction_vlow:env12:chain0,test_ood,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00158,d0,friction_vlow,random,d0:friction_vlow:env3:chain0,test_ood,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00184,d0,friction_vlow,random,d0:friction_vlow:env29:chain0,test_ood,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00179,d0,friction_vlow,random,d0:friction_vlow:env24:chain0,test_ood,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00156,d0,friction_vlow,random,d0:friction_vlow:env1:chain0,test_ood,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00182,d0,friction_vlow,random,d0:friction_vlow:env27:chain0,test_ood,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00169,d0,friction_vlow,random,d0:friction_vlow:env14:chain0,test_ood,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00163,d0,friction_vlow,random,d0:friction_vlow:env8:chain0,test_ood,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00157,d0,friction_vlow,random,d0:friction_vlow:env2:chain0,test_ood,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00224,d0,actuator_mid,random,d0:actuator_mid:env26:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00199,d0,actuator_mid,random,d0:actuator_mid:env1:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00221,d0,actuator_mid,random,d0:actuator_mid:env23:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00209,d0,actuator_mid,random,d0:actuator_mid:env11:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00212,d0,actuator_mid,random,d0:actuator_mid:env14:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00217,d0,actuator_mid,random,d0:actuator_mid:env19:chain0,val,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00229,d0,actuator_mid,random,d0:actuator_mid:env31:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00203,d0,actuator_mid,random,d0:actuator_mid:env5:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00214,d0,actuator_mid,random,d0:actuator_mid:env16:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00219,d0,actuator_mid,random,d0:actuator_mid:env21:chain0,test_id,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00256,d0,actuator_low,random,d0:actuator_low:env17:chain0,test_ood,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00269,d0,actuator_low,random,d0:actuator_low:env30:chain0,test_ood,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00272,d0,actuator_low,random,d0:actuator_low:env17:chain1,test_ood,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00249,d0,actuator_low,random,d0:actuator_low:env10:chain0,test_ood,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00255,d0,actuator_low,random,d0:actuator_low:env16:chain0,test_ood,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00275,d0,actuator_low,random,d0:actuator_low:env10:chain1,test_ood,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00260,d0,actuator_low,random,d0:actuator_low:env21:chain0,test_ood,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00265,d0,actuator_low,random,d0:actuator_low:env26:chain0,test_ood,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00254,d0,actuator_low,random,d0:actuator_low:env15:chain0,test_ood,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00240,d0,actuator_low,random,d0:actuator_low:env1:chain0,test_ood,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00252,d0,actuator_low,random,d0:actuator_low:env13:chain0,test_ood,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00309,d0,disturbance,random,d0:disturbance:env27:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00306,d0,disturbance,random,d0:disturbance:env24:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00313,d0,disturbance,random,d0:disturbance:env31:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00314,d0,disturbance,random,d0:disturbance:env2:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00290,d0,disturbance,random,d0:disturbance:env8:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00287,d0,disturbance,random,d0:disturbance:env5:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00299,d0,disturbance,random,d0:disturbance:env17:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00302,d0,disturbance,random,d0:disturbance:env20:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00316,d0,disturbance,random,d0:disturbance:env24:chain1,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00298,d0,disturbance,random,d0:disturbance:env16:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00305,d0,disturbance,random,d0:disturbance:env23:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00293,d0,disturbance,random,d0:disturbance:env11:chain0,test_id,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00301,d0,disturbance,random,d0:disturbance:env19:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00311,d0,disturbance,random,d0:disturbance:env29:chain0,val,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00321,d0,disturbance,random,d0:disturbance:env17:chain1,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00291,d0,disturbance,random,d0:disturbance:env9:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00297,d0,disturbance,random,d0:disturbance:env15:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00318,d0,disturbance,random,d0:disturbance:env2:chain1,val,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00282,d0,disturbance,random,d0:disturbance:env0:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00295,d0,disturbance,random,d0:disturbance:env13:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00303,d0,disturbance,random,d0:disturbance:env21:chain0,test_id,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00317,d0,disturbance,random,d0:disturbance:env31:chain1,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00286,d0,disturbance,random,d0:disturbance:env4:chain0,train,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00339,d0,low_friction,probe,d0:low_friction:env0:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00340,d0,low_friction,probe,d0:low_friction:env1:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00341,d0,low_friction,probe,d0:low_friction:env2:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00345,d0,low_friction,probe,d0:low_friction:env6:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00346,d0,low_friction,probe,d0:low_friction:env7:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00347,d0,low_friction,probe,d0:low_friction:env8:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00348,d0,low_friction,probe,d0:low_friction:env9:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00349,d0,low_friction,probe,d0:low_friction:env10:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00350,d0,low_friction,probe,d0:low_friction:env11:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00351,d0,low_friction,probe,d0:low_friction:env12:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00352,d0,low_friction,probe,d0:low_friction:env13:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00353,d0,low_friction,probe,d0:low_friction:env14:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00357,d0,low_friction,probe,d0:low_friction:env18:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00359,d0,low_friction,probe,d0:low_friction:env20:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00360,d0,low_friction,probe,d0:low_friction:env21:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00361,d0,low_friction,probe,d0:low_friction:env22:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00362,d0,low_friction,probe,d0:low_friction:env23:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00363,d0,low_friction,probe,d0:low_friction:env24:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00364,d0,low_friction,probe,d0:low_friction:env25:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00365,d0,low_friction,probe,d0:low_friction:env26:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00369,d0,low_friction,probe,d0:low_friction:env30:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00370,d0,low_friction,probe,d0:low_friction:env31:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00386,d0,degraded_actuator,probe,d0:degraded_actuator:env0:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00387,d0,degraded_actuator,probe,d0:degraded_actuator:env1:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00388,d0,degraded_actuator,probe,d0:degraded_actuator:env2:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00392,d0,degraded_actuator,probe,d0:degraded_actuator:env6:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00393,d0,degraded_actuator,probe,d0:degraded_actuator:env7:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00394,d0,degraded_actuator,probe,d0:degraded_actuator:env8:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00395,d0,degraded_actuator,probe,d0:degraded_actuator:env9:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00396,d0,degraded_actuator,probe,d0:degraded_actuator:env10:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00397,d0,degraded_actuator,probe,d0:degraded_actuator:env11:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00398,d0,degraded_actuator,probe,d0:degraded_actuator:env12:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00399,d0,degraded_actuator,probe,d0:degraded_actuator:env13:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00400,d0,degraded_actuator,probe,d0:degraded_actuator:env14:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00404,d0,degraded_actuator,probe,d0:degraded_actuator:env18:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00405,d0,degraded_actuator,probe,d0:degraded_actuator:env19:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00406,d0,degraded_actuator,probe,d0:degraded_actuator:env20:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00407,d0,degraded_actuator,probe,d0:degraded_actuator:env21:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00408,d0,degraded_actuator,probe,d0:degraded_actuator:env22:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00409,d0,degraded_actuator,probe,d0:degraded_actuator:env23:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00410,d0,degraded_actuator,probe,d0:degraded_actuator:env24:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00411,d0,degraded_actuator,probe,d0:degraded_actuator:env25:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00412,d0,degraded_actuator,probe,d0:degraded_actuator:env26:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00416,d0,degraded_actuator,probe,d0:degraded_actuator:env30:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d0_ep00417,d0,degraded_actuator,probe,d0:degraded_actuator:env31:chain0,probe,,episode-level split（非 anchor-level；同链 episode 可跨 split——见审计报告）
+d1_ep00032,d1,friction_low,probe,d1:d1_ep00032,probe_eval,143.0,d1 全部 probe_eval，不进训练
+d1_ep00033,d1,friction_low,probe,d1:d1_ep00033,probe_eval,143.0,d1 全部 probe_eval，不进训练
+d1_ep00034,d1,friction_low,probe,d1:d1_ep00034,probe_eval,143.0,d1 全部 probe_eval，不进训练
+d1_ep00035,d1,friction_low,probe,d1:d1_ep00035,probe_eval,143.0,d1 全部 probe_eval，不进训练
+d1_ep00036,d1,friction_low,probe,d1:d1_ep00036,probe_eval,143.0,d1 全部 probe_eval，不进训练
+d1_ep00037,d1,friction_low,probe,d1:d1_ep00037,probe_eval,143.0,d1 全部 probe_eval，不进训练
+d1_ep00038,d1,friction_low,probe,d1:d1_ep00038,probe_eval,143.0,d1 全部 probe_eval，不进训练
+d1_ep00039,d1,friction_low,probe,d1:d1_ep00039,probe_eval,143.0,d1 全部 probe_eval，不进训练
+d1_ep00040,d1,friction_low,probe,d1:d1_ep00040,probe_eval,244.0,d1 全部 probe_eval，不进训练
+d1_ep00041,d1,friction_low,probe,d1:d1_ep00041,probe_eval,244.0,d1 全部 probe_eval，不进训练
+d1_ep00042,d1,friction_low,probe,d1:d1_ep00042,probe_eval,244.0,d1 全部 probe_eval，不进训练
+d1_ep00043,d1,friction_low,probe,d1:d1_ep00043,probe_eval,244.0,d1 全部 probe_eval，不进训练
+d1_ep00044,d1,friction_low,probe,d1:d1_ep00044,probe_eval,244.0,d1 全部 probe_eval，不进训练
+d1_ep00045,d1,friction_low,probe,d1:d1_ep00045,probe_eval,244.0,d1 全部 probe_eval，不进训练
+d1_ep00046,d1,friction_low,probe,d1:d1_ep00046,probe_eval,244.0,d1 全部 probe_eval，不进训练
+d1_ep00047,d1,friction_low,probe,d1:d1_ep00047,probe_eval,244.0,d1 全部 probe_eval，不进训练
+d1_ep00048,d1,friction_low,probe,d1:d1_ep00048,probe_eval,345.0,d1 全部 probe_eval，不进训练
+d1_ep00049,d1,friction_low,probe,d1:d1_ep00049,probe_eval,345.0,d1 全部 probe_eval，不进训练
+d1_ep00050,d1,friction_low,probe,d1:d1_ep00050,probe_eval,345.0,d1 全部 probe_eval，不进训练
+d1_ep00051,d1,friction_low,probe,d1:d1_ep00051,probe_eval,345.0,d1 全部 probe_eval，不进训练
+d1_ep00052,d1,friction_low,probe,d1:d1_ep00052,probe_eval,345.0,d1 全部 probe_eval，不进训练
+d1_ep00053,d1,friction_low,probe,d1:d1_ep00053,probe_eval,345.0,d1 全部 probe_eval，不进训练
+d1_ep00054,d1,friction_low,probe,d1:d1_ep00054,probe_eval,345.0,d1 全部 probe_eval，不进训练
+d1_ep00055,d1,friction_low,probe,d1:d1_ep00055,probe_eval,345.0,d1 全部 probe_eval，不进训练
+d1_ep00056,d1,friction_low,probe,d1:d1_ep00056,probe_eval,446.0,d1 全部 probe_eval，不进训练
+d1_ep00057,d1,friction_low,probe,d1:d1_ep00057,probe_eval,446.0,d1 全部 probe_eval，不进训练
+d1_ep00058,d1,friction_low,probe,d1:d1_ep00058,probe_eval,446.0,d1 全部 probe_eval，不进训练
+d1_ep00059,d1,friction_low,probe,d1:d1_ep00059,probe_eval,446.0,d1 全部 probe_eval，不进训练
+d1_ep00060,d1,friction_low,probe,d1:d1_ep00060,probe_eval,446.0,d1 全部 probe_eval，不进训练
+d1_ep00061,d1,friction_low,probe,d1:d1_ep00061,probe_eval,446.0,d1 全部 probe_eval，不进训练
+d1_ep00062,d1,friction_low,probe,d1:d1_ep00062,probe_eval,446.0,d1 全部 probe_eval，不进训练
+d1_ep00063,d1,friction_low,probe,d1:d1_ep00063,probe_eval,446.0,d1 全部 probe_eval，不进训练
+d1_ep00064,d1,friction_vlow,probe,d1:d1_ep00064,probe_eval,143.0,d1 全部 probe_eval，不进训练
+d1_ep00065,d1,friction_vlow,probe,d1:d1_ep00065,probe_eval,143.0,d1 全部 probe_eval，不进训练
+d1_ep00066,d1,friction_vlow,probe,d1:d1_ep00066,probe_eval,143.0,d1 全部 probe_eval，不进训练
+d1_ep00067,d1,friction_vlow,probe,d1:d1_ep00067,probe_eval,143.0,d1 全部 probe_eval，不进训练
+d1_ep00068,d1,friction_vlow,probe,d1:d1_ep00068,probe_eval,143.0,d1 全部 probe_eval，不进训练
+d1_ep00069,d1,friction_vlow,probe,d1:d1_ep00069,probe_eval,143.0,d1 全部 probe_eval，不进训练
+d1_ep00070,d1,friction_vlow,probe,d1:d1_ep00070,probe_eval,143.0,d1 全部 probe_eval，不进训练
+d1_ep00071,d1,friction_vlow,probe,d1:d1_ep00071,probe_eval,143.0,d1 全部 probe_eval，不进训练
+d1_ep00072,d1,friction_vlow,probe,d1:d1_ep00072,probe_eval,244.0,d1 全部 probe_eval，不进训练
+d1_ep00073,d1,friction_vlow,probe,d1:d1_ep00073,probe_eval,244.0,d1 全部 probe_eval，不进训练
+d1_ep00074,d1,friction_vlow,probe,d1:d1_ep00074,probe_eval,244.0,d1 全部 probe_eval，不进训练
+d1_ep00075,d1,friction_vlow,probe,d1:d1_ep00075,probe_eval,244.0,d1 全部 probe_eval，不进训练
+d1_ep00076,d1,friction_vlow,probe,d1:d1_ep00076,probe_eval,244.0,d1 全部 probe_eval，不进训练
+d1_ep00077,d1,friction_vlow,probe,d1:d1_ep00077,probe_eval,244.0,d1 全部 probe_eval，不进训练
+d1_ep00078,d1,friction_vlow,probe,d1:d1_ep00078,probe_eval,244.0,d1 全部 probe_eval，不进训练
+d1_ep00079,d1,friction_vlow,probe,d1:d1_ep00079,probe_eval,244.0,d1 全部 probe_eval，不进训练
+d1_ep00080,d1,friction_vlow,probe,d1:d1_ep00080,probe_eval,345.0,d1 全部 probe_eval，不进训练
+d1_ep00081,d1,friction_vlow,probe,d1:d1_ep00081,probe_eval,345.0,d1 全部 probe_eval，不进训练
+d1_ep00082,d1,friction_vlow,probe,d1:d1_ep00082,probe_eval,345.0,d1 全部 probe_eval，不进训练
+d1_ep00083,d1,friction_vlow,probe,d1:d1_ep00083,probe_eval,345.0,d1 全部 probe_eval，不进训练
+d1_ep00084,d1,friction_vlow,probe,d1:d1_ep00084,probe_eval,345.0,d1 全部 probe_eval，不进训练
+d1_ep00085,d1,friction_vlow,probe,d1:d1_ep00085,probe_eval,345.0,d1 全部 probe_eval，不进训练
+d1_ep00086,d1,friction_vlow,probe,d1:d1_ep00086,probe_eval,345.0,d1 全部 probe_eval，不进训练
+d1_ep00087,d1,friction_vlow,probe,d1:d1_ep00087,probe_eval,345.0,d1 全部 probe_eval，不进训练
+d1_ep00088,d1,friction_vlow,probe,d1:d1_ep00088,probe_eval,446.0,d1 全部 probe_eval，不进训练
+d1_ep00089,d1,friction_vlow,probe,d1:d1_ep00089,probe_eval,446.0,d1 全部 probe_eval，不进训练
+d1_ep00090,d1,friction_vlow,probe,d1:d1_ep00090,probe_eval,446.0,d1 全部 probe_eval，不进训练
+d1_ep00091,d1,friction_vlow,probe,d1:d1_ep00091,probe_eval,446.0,d1 全部 probe_eval，不进训练
+d1_ep00092,d1,friction_vlow,probe,d1:d1_ep00092,probe_eval,446.0,d1 全部 probe_eval，不进训练
+d1_ep00093,d1,friction_vlow,probe,d1:d1_ep00093,probe_eval,446.0,d1 全部 probe_eval，不进训练
+d1_ep00094,d1,friction_vlow,probe,d1:d1_ep00094,probe_eval,446.0,d1 全部 probe_eval，不进训练
+d1_ep00095,d1,friction_vlow,probe,d1:d1_ep00095,probe_eval,446.0,d1 全部 probe_eval，不进训练
+d1_ep00000,d1,normal,probe,d1:d1_ep00000,probe_eval,143.0,d1 全部 probe_eval，不进训练
+d1_ep00001,d1,normal,probe,d1:d1_ep00001,probe_eval,143.0,d1 全部 probe_eval，不进训练
+d1_ep00002,d1,normal,probe,d1:d1_ep00002,probe_eval,143.0,d1 全部 probe_eval，不进训练
+d1_ep00003,d1,normal,probe,d1:d1_ep00003,probe_eval,143.0,d1 全部 probe_eval，不进训练
+d1_ep00004,d1,normal,probe,d1:d1_ep00004,probe_eval,143.0,d1 全部 probe_eval，不进训练
+d1_ep00005,d1,normal,probe,d1:d1_ep00005,probe_eval,143.0,d1 全部 probe_eval，不进训练
+d1_ep00006,d1,normal,probe,d1:d1_ep00006,probe_eval,143.0,d1 全部 probe_eval，不进训练
+d1_ep00007,d1,normal,probe,d1:d1_ep00007,probe_eval,143.0,d1 全部 probe_eval，不进训练
+d1_ep00008,d1,normal,probe,d1:d1_ep00008,probe_eval,244.0,d1 全部 probe_eval，不进训练
+d1_ep00009,d1,normal,probe,d1:d1_ep00009,probe_eval,244.0,d1 全部 probe_eval，不进训练
+d1_ep00010,d1,normal,probe,d1:d1_ep00010,probe_eval,244.0,d1 全部 probe_eval，不进训练
+d1_ep00011,d1,normal,probe,d1:d1_ep00011,probe_eval,244.0,d1 全部 probe_eval，不进训练
+d1_ep00012,d1,normal,probe,d1:d1_ep00012,probe_eval,244.0,d1 全部 probe_eval，不进训练
+d1_ep00013,d1,normal,probe,d1:d1_ep00013,probe_eval,244.0,d1 全部 probe_eval，不进训练
+d1_ep00014,d1,normal,probe,d1:d1_ep00014,probe_eval,244.0,d1 全部 probe_eval，不进训练
+d1_ep00015,d1,normal,probe,d1:d1_ep00015,probe_eval,244.0,d1 全部 probe_eval，不进训练
+d1_ep00016,d1,normal,probe,d1:d1_ep00016,probe_eval,345.0,d1 全部 probe_eval，不进训练
+d1_ep00017,d1,normal,probe,d1:d1_ep00017,probe_eval,345.0,d1 全部 probe_eval，不进训练
+d1_ep00018,d1,normal,probe,d1:d1_ep00018,probe_eval,345.0,d1 全部 probe_eval，不进训练
+d1_ep00019,d1,normal,probe,d1:d1_ep00019,probe_eval,345.0,d1 全部 probe_eval，不进训练
+d1_ep00020,d1,normal,probe,d1:d1_ep00020,probe_eval,345.0,d1 全部 probe_eval，不进训练
+d1_ep00021,d1,normal,probe,d1:d1_ep00021,probe_eval,345.0,d1 全部 probe_eval，不进训练
+d1_ep00022,d1,normal,probe,d1:d1_ep00022,probe_eval,345.0,d1 全部 probe_eval，不进训练
+d1_ep00023,d1,normal,probe,d1:d1_ep00023,probe_eval,345.0,d1 全部 probe_eval，不进训练
+d1_ep00024,d1,normal,probe,d1:d1_ep00024,probe_eval,446.0,d1 全部 probe_eval，不进训练
+d1_ep00025,d1,normal,probe,d1:d1_ep00025,probe_eval,446.0,d1 全部 probe_eval，不进训练
+d1_ep00026,d1,normal,probe,d1:d1_ep00026,probe_eval,446.0,d1 全部 probe_eval，不进训练
+d1_ep00027,d1,normal,probe,d1:d1_ep00027,probe_eval,446.0,d1 全部 probe_eval，不进训练
+d1_ep00028,d1,normal,probe,d1:d1_ep00028,probe_eval,446.0,d1 全部 probe_eval，不进训练
+d1_ep00029,d1,normal,probe,d1:d1_ep00029,probe_eval,446.0,d1 全部 probe_eval，不进训练
+d1_ep00030,d1,normal,probe,d1:d1_ep00030,probe_eval,446.0,d1 全部 probe_eval，不进训练
+d1_ep00031,d1,normal,probe,d1:d1_ep00031,probe_eval,446.0,d1 全部 probe_eval，不进训练

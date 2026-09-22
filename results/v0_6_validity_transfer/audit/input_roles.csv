@@ -1,0 +1,19 @@
+field,role,source,privileged,note
+base_linear_velocity_body,model_input,GT(sim root state),privileged,deployable 替代: 状态估计器/odom；本轮无估计器
+base_angular_velocity,model_input,GT(sim root state),privileged,deployable 替代: imu_angular_velocity（已记录未用）
+projected_gravity,model_input,GT 姿态导出,privileged,deployable 替代: IMU 姿态估计
+imu_linear_acceleration,model_input,Isaac IMU（默认无噪声）,semi,仿真 IMU 无噪声/偏置模型，与真实 IMU 分布不同
+joint_position,model_input,编码器,deployable,
+joint_velocity,model_input,编码器(数值微分),deployable,
+feet_contact,model_input,接触力传感器 >1.0N 阈值,semi,阈值来自代码常量，非配置项；真实接触估计另有噪声
+cmd_vel,input+label_ref,开环 schedule 回放,deployable,episode 内 schedule 预生成，不闭环于状态 -> 合法已知计划；声明为回放条件
+execution,label,"由 GT body 速度拼成 [vx,vy,wz]",privileged-as-label,标签可 GT；作为输入则同 base_*_velocity 的 privileged 说明
+residual,label,execution - cmd_vel（同帧 pre-step 配对，见 §4）,privileged-as-label,
+base_position,unused,GT,privileged,可用于 relative pose 目标（后续）
+base_orientation,unused,"GT quat (w,x,y,z)",privileged,frame 单测使用
+base_linear_velocity_world,unused,GT,privileged,frame 单测使用
+imu_angular_velocity,unused,Isaac IMU,deployable,未用——wz 的可 deployable 替代源
+applied_torque,unused,applied（step 后写回的实际力矩）,semi,§B5 要求区分 computed/applied：此为 applied
+foot_velocity,unused,GT,privileged,
+external_force,unused,disturber 写入值,metadata,
+timestamp/episode_time,metadata,episode 内秒（降采样后标称 0.05s 网格）,metadata,"真实采样间隔 {0.04,0.06}s，见 §5"

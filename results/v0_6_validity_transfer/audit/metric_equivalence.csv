@@ -1,0 +1,32 @@
+id,item,claimed,recomputed,match
+1,P_target normal->friction_low,-0.171499,-0.1714993119239807,True
+1,P_target friction_low->normal,0.686717,0.68671715259552,True
+2,low source native L2,1.349489,1.3494893312454224,True
+2,low source command-copy L2,1.308615,1.3086150884628296,True
+2,low MAE vx command-copy,0.070384,0.07038424164056778,True
+2,low MAE vx Context,0.068214,0.06821399182081223,True
+2,low MAE vy command-copy,0.067221,0.0672207772731781,True
+2,low MAE vy Context,0.086826,0.08682576566934586,True
+2,low MAE wz command-copy,0.090306,0.09030617028474808,True
+2,low MAE wz Context,0.12935,0.12934985756874084,True
+3,unique actual futures (all rows),968.0,968.0,True
+3,N->L unique source futures,424.0,424.0,True
+3,N->L unique target futures,334.0,334.0,True
+5,N->L swap-vs-native mean distance,0.370617,0.37061718642684593,True
+5,N->L distance / native target error,0.2746,0.274635136303604,True
+5,N->L matched rows,5510.0,5510.0,True
+6,vlow/vx truth-on-pred slope (pearson^2/a),0.993,0.9930196858691233,True
+6,low/vx truth-on-pred slope,1.03828,1.0382798873981314,True
+6,low/wz truth-on-pred slope,0.84933,0.849324576471595,True
+8,class_tau0.25 identical to class_tau0.5,1.0,1.0,True
+8,distinct per-window min-age values,3.0,3.0,True
+8,"min-age value set == {0,1,inf}",1.0,1.0,True
+8,rows with all-inf age,10682.0,10682.0,True
+9,N->L D_before mean,1.21672,1.2167229652404785,True
+9,N->L ||e_B - e_A|| mean (actual-actual),1.485315,1.4853150844573975,True
+9,N->VL D_before mean,1.64653,1.6465270519256592,True
+9,N->VL ||e_B - e_A|| mean,1.8846,1.8846004009246826,True
+10,N->L squared_target_gain total,-0.375238,-0.3752383887767792,True
+10,N->L per_axis_squared_gain vx,0.033757,0.03375673294067383,True
+10,N->L per_axis_squared_gain vy,0.110085,0.1100853756070137,True
+10,N->L per_axis_squared_gain wz,-0.519081,-0.5190805196762085,True
