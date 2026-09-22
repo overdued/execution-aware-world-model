@@ -1,0 +1,27 @@
+{
+ "probe_train_split": "train only（每折/每次拟合均只用 train）",
+ "classifier": "自实现 L2 one-vs-rest 逻辑回归（全批量 GD，1500 iters）",
+ "regressor": "闭式 ridge（lam=1.0）",
+ "representations": {
+  "M1_context_c_t": 8,
+  "M1_state_latent": 64,
+  "M1_ctx_gru_hidden": 128,
+  "M0_fast_state_gru": 128,
+  "RAW_proprio_last": 40
+ },
+ "n_windows": {
+  "train": 720,
+  "val": 144,
+  "A_unseen_anchor_seen_family": 288,
+  "B_seen_anchor_unseen_family": 240,
+  "C_unseen_anchor_unseen_family": 96,
+  "supp_AQ5xQ4": 48
+ },
+ "targets": {
+  "A_friction_condition": "3 类：normal / friction_mid / friction_low",
+  "B_current_vxvywz": "回归：proprio 末帧 [0,1,5]（schema [0,1,5]）",
+  "C_command_family": "train 仅 Q1_straight/Q2_lateral/Q3_turn；Q4 为未见类",
+  "D_anchor_id": "train 仅 AQ0-4，5 折 CV"
+ },
+ "caveat": "c_t 由 history（含当前 proprio 帧）编码 -> 探到 current state 属预期；关键看 condition 与 family 的相对可解码性。"
+}

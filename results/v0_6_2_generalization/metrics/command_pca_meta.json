@@ -1,0 +1,25 @@
+{
+ "pca_evr_top10": [
+  0.3218627766713114,
+  0.23188164838051006,
+  0.11722362467580741,
+  0.11722324174978824,
+  0.06990205622993666,
+  0.025250115380395732,
+  0.01347501100397944,
+  0.013472153415333149,
+  0.011146592672611777,
+  0.00935230505970611
+ ],
+ "pca_rank_numerical": 103,
+ "n_pca_components_90pct": 8,
+ "n_pca_components_99pct": 39,
+ "feature_dim": 120,
+ "n_train_windows": 720,
+ "fit_on": "train split only",
+ "whitening": "regularized eigenvalue + 0.0001*max",
+ "train_nn95_in_std_space": 0.0,
+ "train_nn_max_in_std_space": 0.0,
+ "n_distinct_train_command_vectors": 119,
+ "n_distinct_train_command_vectors_with_multi_axis": 0
+}

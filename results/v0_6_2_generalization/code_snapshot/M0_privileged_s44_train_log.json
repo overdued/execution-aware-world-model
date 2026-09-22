@@ -1,0 +1,12 @@
+{
+ "model": "M0",
+ "seed": 44,
+ "input_mode": "privileged",
+ "best_val": 0.005539728794246912,
+ "best_epoch": 46,
+ "epochs": 62,
+ "gpu_hours": 0.00016231099764506021,
+ "window_manifest_hash": "245f1e23c43b1c48",
+ "n_train_windows": 720,
+ "n_val_windows": 144
+}
