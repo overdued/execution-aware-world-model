@@ -16,12 +16,14 @@ import torch
 
 from execution_wm.composition_v07 import cells as C
 from execution_wm.composition_v07.data_v07 import build_datasets
-from execution_wm.composition_v07.eval_v07 import CELLS, CKPT, SEEDS
+from execution_wm.composition_v07.eval_v07 import CELLS, SEEDS
+CKPT = os.environ.get("V07_CKPT", "/media/hdd1/yuhang/checkpoints/execution_wm/v0_7")
 from execution_wm.composition_v07.models_v07 import build
 from execution_wm.composition_v07.traj import integrate_xy
 
-OUT = "results/v0_7_composition"
+OUT = os.environ.get("V07_OUT", "results/v0_7_composition")
 FIG = f"{OUT}/figures"
+PREREG = os.environ.get("V07_PREREG", "results/v0_7_composition/prereg")
 os.makedirs(FIG, exist_ok=True)
 plt.rcParams.update({"figure.dpi": 130, "font.size": 8})
 
@@ -51,7 +53,7 @@ def fig1_coverage():
     ax.set_title("Coverage: log1p(#windows) per cell", fontsize=8)
     plt.colorbar(im, ax=ax, shrink=.8)
     # 右：每轴 duty + 共激活（R0 vs R1）
-    rr = json.load(open(f"{OUT}/prereg/r0_vs_r1_marginals.json"))
+    rr = json.load(open(f"{PREREG}/r0_vs_r1_marginals.json"))
     x = np.arange(4); w = .35
     labels = ["duty vx", "duty vy", "duty wz", "co-activation"]
     v0 = [rr["R0"]["axis_duty_vx"], rr["R0"]["axis_duty_vy"], rr["R0"]["axis_duty_wz"],
@@ -87,14 +89,14 @@ def fig2_data_vs_arch():
                     fmt="k_", capsize=4, label="mean +- group CI")
         ax.axhline(0, color="k", lw=.6)
         ax.set_xticks(x); ax.set_xticklabels(splits, fontsize=7)
-        ax.set_ylabel("Δ FDE_xy (m)   (>0 = 前者更差)")
+        ax.set_ylabel("Delta FDE_xy (m)  (>0 = former is worse)")
         ax.set_title(ttl, fontsize=8); ax.legend(fontsize=6); ax.grid(alpha=.3, axis="y")
     save(fig, "data_vs_arch")
 
 
 def fig3_trajectories(n_examples=6):
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    ds = build_datasets("/media/hdd1/yuhang/datasets/execution_wm/v0_7")
+    ds = build_datasets(os.environ.get("V07_DATA", "/media/hdd1/yuhang/datasets/execution_wm/v0_7"))
     d = ds["test_P1"]
     if len(d) == 0:
         d = ds["test_all"]
@@ -116,7 +118,7 @@ def fig3_trajectories(n_examples=6):
     idx = np.linspace(0, len(d) - 1, n_examples).astype(int)
     fig, axes = plt.subplots(2, 3, figsize=(11, 7))
     for ax, i in zip(axes.ravel(), idx):
-        t_xy = integrate_xy(gt[i, :, :2], yaw0[i], yaw_seq=yawf[i, :, 0])
+        t_xy = integrate_xy(gt[i, :, :2], yaw0[i], yaw_seq=yawf[i])
         ax.plot(t_xy[:, 0], t_xy[:, 1], "k-", lw=2, label="truth")
         for name, pr in variants.items():
             p_xy = integrate_xy(pr[i, :, :2], yaw0[i], wz=pr[i, :, 2])
@@ -140,8 +142,8 @@ def fig4_per_group_horizon():
         g = grp.groupby("group_id")["Delta_arch"].mean()
         axes[0].scatter([split] * len(g), g.values, alpha=.8)
     axes[0].axhline(0, color="k", lw=.6)
-    axes[0].set_ylabel("Δ_arch FDE per group (m)")
-    axes[0].set_title("Per-group Δ_arch (each dot = one independent test group)", fontsize=8)
+    axes[0].set_ylabel("Delta_arch FDE per group (m)")
+    axes[0].set_title("Per-group Delta_arch (each dot = one independent test group)", fontsize=8)
     axes[0].grid(alpha=.3, axis="y")
     # 右：逐时域误差
     for key, ls in (("command-copy", "--"), ("D_R1_seedmean", "-"), ("I_R1_seedmean", "-.")):
