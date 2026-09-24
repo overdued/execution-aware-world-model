@@ -16714,5 +16714,12 @@
   "H": 40,
   "windows_per_ep_cap": 6,
   "selection": "query 相位内确定性等距取 6 个 origin（无 RNG）"
+ },
+ "episodes": {
+  "settle_s": 1.0,
+  "schedule_s": 12.6,
+  "total_s": 13.6,
+  "control_hz": 50,
+  "dataset_hz": 20
  }
 }

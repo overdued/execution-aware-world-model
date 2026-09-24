@@ -1,0 +1,12 @@
+{
+ "D": {
+  "n_params": 226808,
+  "latency_ms_per_sample_batch64": 0.001699104905128479
+ },
+ "I": {
+  "n_params": 204723,
+  "latency_ms_per_sample_batch64": 0.008759088814258575
+ },
+ "param_ratio_I_over_D": 0.902626891467673,
+ "within_pm10pct": true
+}

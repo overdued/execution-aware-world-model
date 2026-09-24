@@ -1,0 +1,110 @@
+{
+ "n_total": 8,
+ "n_pass": 8,
+ "n_fail": 0,
+ "results": [
+  {
+   "test": "U1_straight_line",
+   "status": "PASS",
+   "detail": {
+    "displacement": [
+     1.2000000000000008,
+     0.0
+    ],
+    "expected": [
+     1.2000000000000002,
+     0.0
+    ],
+    "max_err": 6.661338147750939e-16
+   }
+  },
+  {
+   "test": "U2_pure_rotation",
+   "status": "PASS",
+   "detail": {
+    "displacement": [
+     0.0,
+     0.0
+    ],
+    "delta_yaw_rad": 1.6000000000000008,
+    "expected_dyaw": 1.6
+   }
+  },
+  {
+   "test": "U3_constant_turn_arc",
+   "status": "PASS",
+   "detail": {
+    "displacement": [
+     1.0097914782171127,
+     0.5516515987730504
+    ],
+    "analytic": [
+     1.0097651817694757,
+     0.5516372329582323
+    ],
+    "midpoint_max_err_m": 2.629644763696426e-05,
+    "forward_euler_max_err_m": 0.0003379917932366805,
+    "radius_m": 1.2,
+    "arc_angle_rad": 1.0
+   }
+  },
+  {
+   "test": "U4_nonzero_initial_yaw",
+   "status": "PASS",
+   "detail": {
+    "displacement": [
+     0.9178106247413853,
+     0.7730612246852296
+    ],
+    "expected": [
+     0.9178106247413862,
+     0.7730612246852293
+    ],
+    "max_err": 8.881784197001252e-16,
+    "yaw0_rad": 0.7
+   }
+  },
+  {
+   "test": "U5_zero_command_inertia",
+   "status": "PASS",
+   "detail": {
+    "zero_cmd_disp": [
+     0.0,
+     0.0
+    ],
+    "true_disp": [
+     1.0000000000000004,
+     0.20000000000000015
+    ],
+    "ccopy_fde": 1.0198039027185575,
+    "note": "零命令不等于零执行；惯性/制动由真值决定，本测试只验证积分不造假"
+   }
+  },
+  {
+   "test": "U6_gt_velocity_error_floor",
+   "status": "PASS",
+   "detail": {
+    "gt_fde": 0.0,
+    "fde_under_5pct_velocity_perturbation_m": 0.005956063345825217,
+    "note": "积分本身不引入误差；误差全部来自速度预测"
+   }
+  },
+  {
+   "test": "U7_yaw_wrap_shortest",
+   "status": "PASS",
+   "detail": {
+    "raw_diff_rad": 6.0,
+    "wrapped_diff_rad": 0.28318530717958623,
+    "naive_would_overshoot_by_rad": 5.716814692820414
+   }
+  },
+  {
+   "test": "U8_input_causality_and_identity",
+   "status": "PASS",
+   "detail": {
+    "status": "SKIPPED",
+    "reason": "派生数据尚未生成"
+   }
+  }
+ ]
+}
