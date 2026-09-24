@@ -1,0 +1,17 @@
+{
+  "00_执行入口与两条研究线说明.md": {
+    "bytes": 4511,
+    "lines": 52,
+    "sha256": "49ce5b20381b31e383748af7fc5cc0d52e9259ce5d755297b58198489cd10583"
+  },
+  "01_CVPR_V07_ClaudeCode执行任务书.md": {
+    "bytes": 19849,
+    "lines": 387,
+    "sha256": "fff897879c3bef52f8f996ad10c77cc1f8baa4687cb1047e3b1f2b084ed46d5f"
+  },
+  "02_Risk_R01_ClaudeCode执行任务书.md": {
+    "bytes": 20543,
+    "lines": 394,
+    "sha256": "3e084abbd5d83dd3f743cbf82e1d66db8dda30571a63338f0022dc94fc639853"
+  }
+}
