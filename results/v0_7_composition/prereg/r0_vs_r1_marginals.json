@@ -1,0 +1,25 @@
+{
+ "R0": {
+  "n_slots": 864,
+  "axis_duty_vx": 0.2777777777777778,
+  "axis_duty_vy": 0.2777777777777778,
+  "axis_duty_wz": 0.2777777777777778,
+  "coactivation_slot_frac": 0.0,
+  "type_counts": {
+   "single": 720,
+   "zero": 144
+  }
+ },
+ "R1": {
+  "n_slots": 864,
+  "axis_duty_vx": 0.2777777777777778,
+  "axis_duty_vy": 0.2777777777777778,
+  "axis_duty_wz": 0.2777777777777778,
+  "coactivation_slot_frac": 0.4166666666666667,
+  "type_counts": {
+   "double": 360,
+   "zero": 504
+  }
+ },
+ "note": "两 regime 的脚本数/段数/dwell 多重集完全相同；轴占空比尽量对齐，共激活率按设计不同（R0=0）"
+}
