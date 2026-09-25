@@ -22,6 +22,8 @@ ap.add_argument("--plan", required=True)
 ap.add_argument("--out-root", required=True)
 ap.add_argument("--smoke", action="store_true")
 ap.add_argument("--num-envs", type=int, default=1)
+ap.add_argument("--resume", action="store_true",
+                help="断点续采：扫描已有 episode，跳过已完成的 (group, friction, script)")
 from isaaclab.app import AppLauncher  # noqa: E402
 
 AppLauncher.add_app_launcher_args(ap)
@@ -237,8 +239,26 @@ def main():
         frictions = frictions[:1]
         for g in groups:
             g["_scripts_subset"] = 4
-    index, ep_global = [], 0
+    # ---- 断点续采：扫描已有 episode ----
+    index, ep_global, done = [], 0, set()
     readback_log = {}
+    if args.resume:
+        import glob as _glob
+        for jf in sorted(_glob.glob(os.path.join(args.out_root, "*", "*", "*", "ep_*.json"))):
+            m = json.load(open(jf))
+            npz = jf.replace(".json", ".npz")
+            if not os.path.exists(npz):
+                print(f"[resume] 跳过不完整: {jf}"); continue
+            n_steps = int(len(np.load(npz)["sim_time"]))
+            index.append({**m, "file": npz, "steps_50hz": n_steps})
+            ep_global = max(ep_global, int(m["episode_id"]) + 1)
+            done.add((m["anchor_group_id"], m["condition"], m["script_id"]))
+        print(f"[resume] 已有 {len(index)} episodes（next id {ep_global}），"
+              f"跳过 {len(done)} 个已完成 (group, friction, script)", flush=True)
+        # 恢复 friction readback 记录
+        for e in index:
+            if "friction_readback" in e and "condition" in e:
+                readback_log.setdefault(e["condition"], e["friction_readback"])
     t_start = time.time()
 
     for g in groups:
@@ -250,6 +270,8 @@ def main():
             set_friction(uw, float(fval))
             readback_log.setdefault(fname, material_readback(uw))
             for sc in scripts:
+                if (gid, fname, sc["script_id"]) in done:
+                    continue
                 segs = [{"cell": s["cell"], "duration_s": s["duration_s"],
                          "cmd_values": _cell_values(s["cell"])} for s in sc["segments"]]
                 torch.manual_seed(int(g["reset_seed"]))
