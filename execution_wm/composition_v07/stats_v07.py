@@ -2,6 +2,8 @@
 
 统计单元 = 独立 anchor/session group：先 group 内平均，再跨 group 配对 bootstrap；
 3 个模型 seed 分别报告，不伪装成额外物理环境。
+主比较（test_P1）给两版口径：全部窗口 + 高纯度窗口（future_cell_purity >= 0.8，
+记为 test_P1_purity08），依据 HANDOFF_V07 §4（训练/评价前已写入的要求）。
 输出: metrics/data_vs_arch_effect.csv, main_axis_lead.csv, per_anchor_seed.csv,
       termination_and_masks.csv, command_coverage.csv
 """
@@ -25,8 +27,11 @@ N_BOOT = 2000
 METRICS = ["FDE_xy_2s_m", "ADE_xy_2s_m", "net_yaw_err_rad"]
 
 
-def group_errors(pred, gt, groups, yaw0, yawf, n=40):
-    """每窗 FDE（m）与逐轴 horizon MAE，按 group 聚合。"""
+def group_errors(pred, gt, groups, yaw0, yawf, n=40, keep=None):
+    """每窗 FDE（m）与逐轴 horizon MAE，按 group 聚合。keep: 可选窗口级布尔掩码。"""
+    if keep is not None:
+        pred, gt, yaw0, yawf = pred[keep], gt[keep], yaw0[keep], yawf[keep]
+        groups = np.asarray(groups)[keep]
     T = pred.shape[1]
     from execution_wm.composition_v07.traj import integrate_xy, wrap_pi
     nn = len(pred)
@@ -69,6 +74,11 @@ def main():
         n = len(dset)
         hp, ha, fa, fr, conds, eps, groups, levels = dset.batch(np.arange(n), device)
         gt, yaw0, yawf = dset.fe, dset.yaw0, dset.yawf
+        # 主比较的两版口径（HANDOFF_V07 §4）：全部窗口 + 高纯度窗口（purity >= 0.8）
+        variants = [(split, None)]
+        if split == "test_P1":
+            pur = np.array([w["future_cell_purity"] for w in dset.windows])
+            variants.append(("test_P1_purity08", pur >= 0.8))
         for (mname, regime) in CELLS:
             for seed in SEEDS:
                 p = os.path.join(CKPT, f"{mname}_{regime}_s{seed}", "best.pt")
@@ -78,14 +88,17 @@ def main():
                 m = build(mname).to(device); m.load_state_dict(ck["model_state"]); m.eval()
                 with torch.no_grad():
                     pr = (fa + m(hp, ha, fa)).cpu().numpy()
-                ug, agg = group_errors(pr, gt, groups, yaw0, yawf)
-                preds[(split, mname, regime, seed)] = {"groups": ug, "agg": agg,
-                                                       "cond": np.array(conds),
-                                                       "level": np.array(levels)}
+                for vname, keep in variants:
+                    ug, agg = group_errors(pr, gt, groups, yaw0, yawf, keep=keep)
+                    preds[(vname, mname, regime, seed)] = {"groups": ug, "agg": agg,
+                                                           "n_win": int(keep.sum()) if keep is not None else n,
+                                                           "cond": np.array(conds),
+                                                           "level": np.array(levels)}
         print(f"[stats] {split}: {n} windows, {len(np.unique(groups))} groups")
 
     rows, per_anchor = [], []
-    for split in splits:
+    row_splits = ["test_all", "test_P0", "test_P1", "test_P1_purity08", "test_P2"]
+    for split in row_splits:
         if not any(k[0] == split for k in preds):
             continue
         groups = None
@@ -108,6 +121,7 @@ def main():
                 rows.append({
                     "split": split, "metric": metric, "seed": seed,
                     "n_groups": len(groups),
+                    "n_windows": preds[(split, "D", "R1", seed)]["n_win"],
                     "E_D_R0": float(d_r0.mean()), "E_D_R1": float(d_r1.mean()),
                     "E_I_R1": float(i_r1.mean()),
                     "E_I_R0": float(i_r0.mean()) if i_r0 is not None else np.nan,

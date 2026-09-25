@@ -1,12 +1,15 @@
- execution_wm/composition_v07/__init__.py           |     0
- execution_wm/composition_v07/audit_offline.py      |    75 +
- execution_wm/composition_v07/cells.py              |   185 +
- execution_wm/composition_v07/prereg_build.py       |   237 +
- .../composition_v07/stage0_runtime_audit.py        |   251 +
- .../v0_7_composition/audit/information_roles.json  |   116 +
- .../audit/time_label_feature_material_tests.json   | 21533 +++++++++++++++++++
- .../prereg/PRE_REGISTRATION_V07.md                 |   208 +
- results/v0_7_composition/prereg/command_cells.json |   368 +
- .../prereg/r0_vs_r1_marginals.json                 |    25 +
- results/v0_7_composition/prereg/split_plan.json    | 16725 ++++++++++++++
- 11 files changed, 39723 insertions(+)
+ execution_wm/composition_v07/postprocess_v07.py    |   2 +-
+ results/v0_7_composition/HANDOFF_V07.md            | 209 +++++++++++++++++++++
+ .../audit/traj_integration_tests.json              |   4 +-
+ .../code_snapshot/composition_v07/collect_v07.py   |  24 ++-
+ .../code_snapshot/composition_v07/data_v07.py      |  54 ++++--
+ .../code_snapshot/composition_v07/derive_v07.py    |   2 +-
+ .../code_snapshot/composition_v07/eval_v07.py      |  11 +-
+ .../code_snapshot/composition_v07/figures_v07.py   |  18 +-
+ .../code_snapshot/composition_v07/manifests_v07.py |   8 +-
+ .../composition_v07/postprocess_v07.py             |   6 +-
+ .../code_snapshot/composition_v07/stats_v07.py     |  23 ++-
+ .../code_snapshot/composition_v07/train_v07.py     |   2 +-
+ .../code_snapshot/git_diff_stat.txt                |  12 --
+ results/v0_7_composition/metrics/param_check.json  |   4 +-
+ 14 files changed, 318 insertions(+), 61 deletions(-)

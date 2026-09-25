@@ -20,7 +20,7 @@ from execution_wm.composition_v07.train_v07 import ade_xy, fde_xy
 from execution_wm.composition_v07.traj import integrate_xy, wrap_pi
 
 OUT = "results/v0_7_composition"
-CKPT = "/media/hdd1/yuhang/checkpoints/execution_wm/v0_7"
+CKPT = os.environ.get("V07_CKPT", "/media/hdd1/yuhang/checkpoints/execution_wm/v0_7")
 CELLS = [("D", "R0"), ("D", "R1"), ("I", "R0"), ("I", "R1")]
 SEEDS = (42, 43, 44)
 LEADS = {"0.25s": 5, "0.5s": 10, "1.0s": 20, "2.0s": 40}
@@ -61,14 +61,14 @@ def trajectory_metrics(pred_e, true_e, yaw0, yawf):
     pred_xy = np.stack([integrate_xy(pred_e[i, :, :2], yaw0[i], wz=pred_e[i, :, 2])
                         for i in range(n)])
     true_xy = np.stack([integrate_xy(true_e[i, :, :2], yaw0[i],
-                                    yaw_seq=yawf[i, :, 0]) for i in range(n)])
+                                    yaw_seq=yawf[i]) for i in range(n)])
     fde = float(np.linalg.norm(pred_xy[:, -1] - true_xy[:, -1], axis=1).mean())
     ade = float(np.linalg.norm(pred_xy - true_xy, axis=2).mean())
     dyaw_pred = np.cumsum(pred_e[:, :, 2], axis=1)[:, -1] * DT
-    dyaw_true = wrap_pi(yawf[:, -1, 0] - yaw0)
+    dyaw_true = wrap_pi(yawf[:, -1] - yaw0)
     yaw_err = float(np.abs(wrap_pi(dyaw_pred - dyaw_true)).mean())
     # ORACLE_YAW_DIAGNOSTIC（预测速度 + 真值 yaw）
-    orc = np.stack([integrate_xy(pred_e[i, :, :2], yaw0[i], yaw_seq=yawf[i, :, 0])
+    orc = np.stack([integrate_xy(pred_e[i, :, :2], yaw0[i], yaw_seq=yawf[i])
                     for i in range(n)])
     fde_orc = float(np.linalg.norm(orc[:, -1] - true_xy[:, -1], axis=1).mean())
     return fde, ade, yaw_err, fde_orc
@@ -76,7 +76,7 @@ def trajectory_metrics(pred_e, true_e, yaw0, yawf):
 
 def summarize(pred_e, true_e, yaw0, yawf):
     row = {}
-    for ax, i in enumerate(AXES):
+    for i, ax in enumerate(AXES):
         for ln, k in LEADS.items():
             row[f"lead_MAE_{ax}@{ln}"] = float(np.abs(pred_e[:, k - 1, i] -
                                                       true_e[:, k - 1, i]).mean())
@@ -148,6 +148,7 @@ def main():
         print(f"[eval] {split} done")
 
     os.makedirs(os.path.join(args.out, "predictions"), exist_ok=True)
+    os.makedirs(os.path.join(args.out, "metrics"), exist_ok=True)
     pth = os.path.join(args.out, "predictions", "pred_cache.npz")
     np.savez_compressed(pth, **{k.replace("/", "__"): v for k, v in cache.items()})
     sha = hashlib.sha256(open(pth, "rb").read()).hexdigest()

@@ -17,8 +17,8 @@ from execution_wm.composition_v07.data_v07 import build_datasets
 from execution_wm.composition_v07.eval_v07 import summarize
 from execution_wm.composition_v07.models_v07 import build
 
-OUT = "results/v0_7_composition"
-CKPT = "/media/hdd1/yuhang/checkpoints/execution_wm/v0_7"
+OUT = os.environ.get("V07_OUT", "results/v0_7_composition")
+CKPT = os.environ.get("V07_CKPT", "/media/hdd1/yuhang/checkpoints/execution_wm/v0_7")
 CELLS = [("D", "R0"), ("D", "R1"), ("I", "R0"), ("I", "R1")]
 SEEDS = (42, 43, 44)
 N_BOOT = 2000
@@ -32,18 +32,21 @@ def group_errors(pred, gt, groups, yaw0, yawf, n=40):
     nn = len(pred)
     pred_xy = np.stack([integrate_xy(pred[i, :, :2], yaw0[i], wz=pred[i, :, 2])
                         for i in range(nn)])
-    true_xy = np.stack([integrate_xy(gt[i, :, :2], yaw0[i], yaw_seq=yawf[i, :, 0])
+    true_xy = np.stack([integrate_xy(gt[i, :, :2], yaw0[i], yaw_seq=yawf[i])
                         for i in range(nn)])
     fde = np.linalg.norm(pred_xy[:, -1] - true_xy[:, -1], axis=1)
-    per_axis = {ax: np.abs(pred[:, -1, i] - gt[:, -1, i]) for i, ax in enumerate(("vx", "vy", "wz"))}
+    ade = np.linalg.norm(pred_xy - true_xy, axis=2).mean(axis=1)
+    dyaw_pred = np.cumsum(pred[:, :, 2], axis=1)[:, -1] * 0.05
+    dyaw_true = wrap_pi(yawf[:, -1] - yaw0)
+    yaw_err = np.abs(wrap_pi(dyaw_pred - dyaw_true))
+    per_axis = {ax: np.abs(pred[:, -1, i] - gt[:, -1, i])
+                for i, ax in enumerate(("vx", "vy", "wz"))}
     g = np.array(groups)
     ug = np.unique(g)
-    agg = {"FDE_xy_2s_m": {k: float(v[g == k].mean()) for k, v in
-                           [("_", fde)] for k in []} }
-    out = {m: np.array([fde[g == k].mean() for k in ug]) for m in ["FDE_xy_2s_m"]}
+    raw = {"FDE_xy_2s_m": fde, "ADE_xy_2s_m": ade, "net_yaw_err_rad": yaw_err}
     for ax, v in per_axis.items():
-        out[f"lead_MAE_{ax}@2.0s"] = np.array([v[g == k].mean() for k in ug])
-    return ug, out
+        raw[f"lead_MAE_{ax}@2.0s"] = v
+    return ug, {m: np.array([v[g == k].mean() for k in ug]) for m, v in raw.items()}
 
 
 def paired_boot(d, n_boot=N_BOOT, rng=None):
@@ -55,7 +58,7 @@ def paired_boot(d, n_boot=N_BOOT, rng=None):
 
 def main():
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    ds = build_datasets("/media/hdd1/yuhang/datasets/execution_wm/v0_7")
+    ds = build_datasets(os.environ.get("V07_DATA", "/media/hdd1/yuhang/datasets/execution_wm/v0_7"))
     splits = ["test_all", "test_P0", "test_P1", "test_P2"]
     preds = {}
     rng = np.random.default_rng(20260925)

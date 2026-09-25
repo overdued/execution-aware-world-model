@@ -12,8 +12,8 @@ import pandas as pd
 from execution_wm.composition_v07 import cells as C
 from execution_wm.composition_v07.data_v07 import build_datasets, load_index
 
-ROOT = "/media/hdd1/yuhang/datasets/execution_wm/v0_7"
-OUT = "results/v0_7_composition"
+ROOT = os.environ.get("V07_DATA", "/media/hdd1/yuhang/datasets/execution_wm/v0_7")
+OUT = os.environ.get("V07_OUT", "results/v0_7_composition")
 
 
 def sha256(p, n=1 << 20):
@@ -40,7 +40,9 @@ def main():
             "split": e["split"], "condition": e["condition"],
             "coverage_regime": e["coverage_regime"], "script_id": e["script_id"],
             "timing_template": e["timing_template"], "reset_seed": e["reset_seed"],
-            "duration_s": e["duration_s"], "steps_50hz": e["steps_50hz"],
+            "duration_s": e["duration_s"],
+            "steps_50hz": e.get("steps_50hz",
+                                int(round(e["duration_s"] / 0.02))),
             "termination_reason": e["termination_reason"],
             "n_cells": len(e["command_cell_ids"]),
             "cell_types": "|".join(sorted({C.cell_type(c) for c in e["command_cell_ids"]})),

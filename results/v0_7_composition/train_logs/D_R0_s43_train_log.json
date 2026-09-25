@@ -1,0 +1,20 @@
+{
+ "model": "D",
+ "regime": "R0",
+ "seed": 43,
+ "n_train_windows": 1296,
+ "n_val_windows": 1296,
+ "n_params": 226808,
+ "s_E": 0.24642187356948853,
+ "best_val_fde_xy": 0.08831491321325302,
+ "best_epoch": 15,
+ "epochs": 31,
+ "wall_seconds": 0.8154163360595703,
+ "gpu_hours": 0.00022647089428371852,
+ "peak_gpu_mem_mb": 76.03173828125,
+ "window_manifest_hash": "9f3238863bad34b6",
+ "lambda_xy": 0.0,
+ "lambda_yaw": 0.0,
+ "checkpoint_selection": "val FDE_xy (common metric for all cells)",
+ "input_mode": "simulated deployable-candidate (GT body vel/ang vel masked)"
+}

@@ -47,6 +47,7 @@ python -m execution_wm.composition_v07.train_v07 --data-root /media/hdd1/yuhang/
 # --- Stage 4：评价与统计 ---
 python -m execution_wm.composition_v07.eval_v07 --data-root /media/hdd1/yuhang/datasets/execution_wm/v0_7
 python -m execution_wm.composition_v07.stats_v07
+#   stats 输出的主比较含两版口径：test_P1（全部窗口）与 test_P1_purity08（purity≥0.8）
 python -m execution_wm.composition_v07.manifests_v07
 python -m execution_wm.composition_v07.figures_v07
 python -m execution_wm.composition_v07.postprocess_v07

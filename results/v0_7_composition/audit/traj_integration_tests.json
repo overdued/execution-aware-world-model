@@ -102,8 +102,8 @@
    "test": "U8_input_causality_and_identity",
    "status": "PASS",
    "detail": {
-    "status": "SKIPPED",
-    "reason": "派生数据尚未生成"
+    "n_checked": 20,
+    "identity_max_err": 5.960464477539063e-08
    }
   }
  ]

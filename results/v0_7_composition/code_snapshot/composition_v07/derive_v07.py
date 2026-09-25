@@ -23,7 +23,7 @@ sys.path.insert(0, PROJ)
 from execution_wm.validity_v061 import timebase as tb  # noqa: E402
 from execution_wm.validity_v061.derive_targets import (anti_alias, causal_lowpass,  # noqa: E402
                                                        legalize_quaternion, quat_to_yaw)
-from execution_wm.composition_v07.collect_v07 import BUFFER_KEYS  # noqa: E402,F401
+# 注意：不要 import collect_v07 —— 它会在模块级解析 argparse（需 --plan/--out-root）
 
 INPUT_KEYS = ["base_linear_velocity_body", "base_angular_velocity", "projected_gravity",
               "imu_linear_acceleration", "joint_position", "joint_velocity", "feet_contact"]

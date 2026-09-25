@@ -55,7 +55,7 @@ def main():
                     continue
                 pr = cache[key]
                 gt = dset.fe
-                for ax, ai in enumerate(("vx", "vy", "wz")):
+                for ai, ax in enumerate(("vx", "vy", "wz")):
                     for ln, k in (("0.25s", 5), ("0.5s", 10), ("1.0s", 20), ("2.0s", 40)):
                         rows.append({"split": split, "variant": key.split("__", 1)[1],
                                      "axis": ax, "lead_s": ln.replace("s", ""),

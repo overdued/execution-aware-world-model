@@ -1,0 +1,7 @@
+dataset,n_windows,n_groups,n_episodes,median_future_cell_purity,frac_purity_ge_0.8,valid_prefix_mask,n_terminated_episodes,same_window_set_for_all_models
+train_R0,1296,12,216,0.6,0.05324074074074074,所有窗口 full-H 有效（无终止被截断）；终止样本原地保留,1,True
+train_R1,2592,12,432,0.725,0.17476851851851852,所有窗口 full-H 有效（无终止被截断）；终止样本原地保留,1,True
+val,1296,6,216,0.725,0.3479938271604938,所有窗口 full-H 有效（无终止被截断）；终止样本原地保留,1,True
+test_P0,432,6,72,0.6625,0.2916666666666667,所有窗口 full-H 有效（无终止被截断）；终止样本原地保留,1,True
+test_P1,432,6,72,0.725,0.3125,所有窗口 full-H 有效（无终止被截断）；终止样本原地保留,1,True
+test_P2,432,6,72,0.725,0.3819444444444444,所有窗口 full-H 有效（无终止被截断）；终止样本原地保留,1,True

@@ -11,7 +11,7 @@ import torch
 from execution_wm.composition_v07.data_v07 import H, build_datasets
 from execution_wm.composition_v07.models_v07 import build, n_params
 
-OUT = "results/v0_7_composition"
+OUT = os.environ.get("V07_OUT", "results/v0_7_composition")
 
 
 def main():
@@ -44,7 +44,7 @@ def main():
     cache_p = f"{OUT}/predictions/pred_cache.npz"
     if os.path.exists(cache_p):
         cache = np.load(cache_p)
-        ds = build_datasets("/media/hdd1/yuhang/datasets/execution_wm/v0_7")
+        ds = build_datasets(os.environ.get("V07_DATA", "/media/hdd1/yuhang/datasets/execution_wm/v0_7"))
         rows = []
         for split in ("test_all", "test_P0", "test_P1", "test_P2"):
             dset = ds[split]
@@ -55,7 +55,7 @@ def main():
                     continue
                 pr = cache[key]
                 gt = dset.fe
-                for ax, ai in enumerate(("vx", "vy", "wz")):
+                for ai, ax in enumerate(("vx", "vy", "wz")):
                     for ln, k in (("0.25s", 5), ("0.5s", 10), ("1.0s", 20), ("2.0s", 40)):
                         rows.append({"split": split, "variant": key.split("__", 1)[1],
                                      "axis": ax, "lead_s": ln.replace("s", ""),

@@ -53,17 +53,43 @@ def fixed_origins(T, phase, wpe=WPE):
 
 
 class V07Windows:
-    """从 20Hz 派生文件构建窗口；lineage 逐窗保存。"""
+    """从 20Hz 派生文件构建窗口；lineage 逐窗保存。
 
-    def __init__(self, entries, mask_priv=True):
+    逐段时长来自 split_plan.json（按 group_id + script_id 解析）——
+    index.json 只存 cell_ids 与 template，不含时长。解析结果与 episode 记录的
+    command_cell_ids 交叉校验，不一致即报错（防止 plan 与数据错配）。
+    """
+
+    _PLAN_CACHE = {}
+
+    @classmethod
+    def _plan_scripts(cls, plan_path):
+        if plan_path not in cls._PLAN_CACHE:
+            plan = json.load(open(plan_path))
+            cls._PLAN_CACHE[plan_path] = (plan["scripts"],
+                                          float(plan.get("episodes", {}).get("settle_s", 1.0)))
+        return cls._PLAN_CACHE[plan_path]
+
+    def __init__(self, entries, mask_priv=True, plan_path=None):
         self.windows = []
         self.mask_priv = mask_priv
+        plan_scripts, settle_s = (self._plan_scripts(plan_path) if plan_path
+                                  else (None, 1.0))
         for e in entries:
             ep = load_episode(e["path20"])
-            for k0 in fixed_origins(ep["T"], ep["phase"]):
+            if plan_scripts is not None:
+                gid = e.get("group_id") or e["anchor_group_id"]
+                sc = next(x for x in plan_scripts[gid]
+                          if x["script_id"] == e["script_id"])
+                cells = [s["cell"] for s in sc["segments"]]
+                seg_durs = np.array([s["duration_s"] for s in sc["segments"]])
+                assert cells == list(e["command_cell_ids"]), (
+                    f"plan 与 episode 的 cell 不一致: {gid}/{e['script_id']}")
+            else:
                 cells = e["command_cell_ids"]
-                seg_durs = np.array([s["duration_s"] for s in e["segments"]])
-                tq = k0 * 0.05 - e["settle_s"]
+                seg_durs = np.array(e["segment_durations"])
+            for k0 in fixed_origins(ep["T"], ep["phase"]):
+                tq = k0 * 0.05 - (e.get("settle_s") or settle_s)
                 acc, dom = 0.0, cells[0]
                 for c, dur in zip(cells, seg_durs):
                     if tq < acc + dur:
@@ -72,7 +98,7 @@ class V07Windows:
                 # future horizon 内的 cell 集合（评估纯度）
                 fut_cells = []
                 for j in range(k0 + 1, k0 + H + 1):
-                    tqj = j * 0.05 - e["settle_s"]
+                    tqj = j * 0.05 - (e.get("settle_s") or settle_s)
                     acc2 = 0.0
                     for c, dur in zip(cells, seg_durs):
                         if tqj < acc2 + dur:
@@ -111,7 +137,8 @@ class V07Windows:
             else np.zeros((0, H, 3), np.float32)
         self.ha = cat("_ha"); self.fa = cat("_fa"); self.fr = cat("_fr"); self.fe = cat("_fe")
         self.yaw0 = np.array([w["_yaw0"] for w in self.windows]) if n else np.zeros(0)
-        self.yawf = cat("_yawf") if n else np.zeros((0, H, 1), np.float32)
+        self.yawf = (np.stack([w["_yawf"] for w in self.windows]).astype(np.float32)
+                     if n else np.zeros((0, H), np.float32))   # [N, H] 未来真值 yaw
 
     def __len__(self):
         return len(self.windows)
@@ -149,8 +176,11 @@ def load_index(root):
     return idx
 
 
-def build_datasets(root):
+def build_datasets(root, plan_path=None):
     """-> dict: train_R0, train_R1, val, test_P0, test_P1, test_P2（+ test_all）"""
+    plan_path = plan_path or os.path.join(
+        os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+        "results/v0_7_composition/prereg/split_plan.json")
     idx = [e for e in load_index(root) if e["split"] in ("train", "val", "test")]
     tr = [e for e in idx if e["split"] == "train"]
     va = [e for e in idx if e["split"] == "val"]
@@ -158,10 +188,10 @@ def build_datasets(root):
     r0_eps = [e for e in tr if e["coverage_regime"] == "R0"]
     r1_eps = [e for e in tr if e["coverage_regime"] == "R1"]
     ds = {
-        "train_R0": V07Windows(r0_eps),
-        "train_R1": V07Windows(r0_eps + r1_eps),
-        "val": V07Windows(va),
-        "test_all": V07Windows(te),
+        "train_R0": V07Windows(r0_eps, plan_path=plan_path),
+        "train_R1": V07Windows(r0_eps + r1_eps, plan_path=plan_path),
+        "val": V07Windows(va, plan_path=plan_path),
+        "test_all": V07Windows(te, plan_path=plan_path),
     }
     ds["test_P0"] = ds["test_all"].subset(lambda w: w["level"] == "P0_seen_cell")
     ds["test_P1"] = ds["test_all"].subset(lambda w: w["level"] == "P1_heldout_pair")

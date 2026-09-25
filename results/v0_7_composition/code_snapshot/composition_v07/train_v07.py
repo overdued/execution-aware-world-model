@@ -22,7 +22,7 @@ from execution_wm.composition_v07.data_v07 import build_datasets, H
 from execution_wm.composition_v07.models_v07 import build, n_params
 
 OUT = "results/v0_7_composition"
-CKPT = "/media/hdd1/yuhang/checkpoints/execution_wm/v0_7"
+CKPT = os.environ.get("V07_CKPT", "/media/hdd1/yuhang/checkpoints/execution_wm/v0_7")
 MAX_EPOCHS = 100
 PATIENCE = 15
 BS = 128
