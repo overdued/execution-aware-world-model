@@ -1,0 +1,21 @@
+{
+ "n_terminated_episodes_total": 1,
+ "terminated_detail": [
+  {
+   "episode_id": 492,
+   "split": "val",
+   "coverage_regime": "P0_seen_cell",
+   "termination_reason": "terminated",
+   "T_20hz": 79,
+   "duration_recorded_s": 3.95,
+   "max_window_end": 78
+  }
+ ],
+ "terminated_splits": [
+  "val"
+ ],
+ "test_splits_with_terminated": 0,
+ "val_windows_from_terminated": 6,
+ "truncation_rule": "fixed_origins 只取 origin <= T-H-1，窗口终点 origin+H <= T-1；终止 episode 只录制到终止时刻，窗口不超出已记录数据 → 不存在把短 horizon 当 2s FDE 的情形",
+ "note": "V0.7 评价未用显式 valid-prefix mask：因为终止即停止录制，所有窗口天然落在终止前数据内。val 的 6 个窗口来自 ep492（G13/low/sc00，3.92s 终止），占 val 1296 窗的 0.46%，参与过 checkpoint 选择（val FDE_xy），影响有界；test 三个 split 均无终止 episode，主结果不受影响。termination_and_masks.csv 每行 n_terminated_episodes=1 是按全局统计填入，并非每个数据集各有 1 条。"
+}

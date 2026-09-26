@@ -1,0 +1,36 @@
+{
+ "metric": "FDE_xy_2s_m（中点积分、预测侧 wz 自回归、终点 t=+2.0s；非 ADE/prefix/fixed-lead 速度）",
+ "population": "test_P1 全部 432 窗（非高纯度子集）",
+ "window_id_rule": "episode_id@origin_grid（确定性 6 origins/episode，无 RNG）",
+ "n_windows": 432,
+ "n_groups": 6,
+ "groups": [
+  "G18",
+  "G19",
+  "G20",
+  "G21",
+  "G22",
+  "G23"
+ ],
+ "aggregation_axes": [
+  "window-equal",
+  "group-equal"
+ ],
+ "pred_pooling_axes": [
+  "per-seed",
+  "mean-of-predictions(3 seeds)"
+ ],
+ "termination": "test_P1 432 窗全部 full-H 有效（termination_and_masks.csv），无截断终点",
+ "checkpoints": "/media/hdd1/yuhang/checkpoints/execution_wm/v0_7/<M>_<R>_s<seed>/best.pt（val FDE_xy 选择）",
+ "data_index_sha256": "05096525f8a097884acc7a502e792cc58370b3af8b4d1c26934a7e00c3379c65",
+ "pred_cache_sha256": "839a3dfedb6b81bf91341116c04d0c433c3f57ebe85a1cd7c930d0c7cc6eccdd",
+ "note": "pred_cache 只含预测数组（100 个），GT/姿态未入缓存；GT 由冻结数据+确定性窗口 manifest 重建（build_datasets 无 RNG），窗口数与顺序经 manifest hash 校验。",
+ "window_ids_preview": [
+  "652@20",
+  "652@62",
+  "652@104",
+  "652@147",
+  "652@189",
+  "652@231"
+ ]
+}

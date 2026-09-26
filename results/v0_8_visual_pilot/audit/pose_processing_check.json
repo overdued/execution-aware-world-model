@@ -1,0 +1,49 @@
+{
+ "actual_pipeline_order": "anti_alias(逐分量滤波) -> legalize(符号连续+归一化)；滤波在符号连续之前",
+ "quat_norm_dev_0.2999_meaning": "滤波后未合法化四元数的范数偏差（derive 审计字段），不是原始 simulator 物理姿态的范数偏差",
+ "raw_sim_quat_norm_dev_max_over_864_eps": 1.923852559482242e-07,
+ "raw_sim_quat_norm_dev_mean": 4.315044902180057e-08,
+ "episodes_with_raw_sign_flip": 0,
+ "reference_subset": "test_P1 432 窗",
+ "yaw_src_comparison": {
+  "lb_yaw": "滤波(anti_alias)后合法化",
+  "lbra_yaw": "原始 50Hz 四元数合法化后 hold tick 直接取值（不滤波）"
+ },
+ "max_per_window_yaw_diff_rad": 0.011045694351196289,
+ "mean_per_window_yaw_diff_rad": 0.005497733136305922,
+ "frac_windows_yaw_diff_gt_1deg": 0.0,
+ "delta_sign_consistency": {
+  "Delta_data_sign_flips": 0,
+  "Delta_arch_sign_flips": 0
+ },
+ "delta_values": {
+  "lb_yaw": {
+   "42": {
+    "Delta_data": 0.008283460524435335,
+    "Delta_arch": 0.0035587647176624215
+   },
+   "43": {
+    "Delta_data": 0.008719640598352354,
+    "Delta_arch": -0.0026535889810001406
+   },
+   "44": {
+    "Delta_data": 0.005700302892018519,
+    "Delta_arch": 0.001088723408359915
+   }
+  },
+  "lbra_yaw": {
+   "42": {
+    "Delta_data": 0.008378428070032903,
+    "Delta_arch": 0.00346571671887895
+   },
+   "43": {
+    "Delta_data": 0.008802636018429677,
+    "Delta_arch": -0.0026948695961972885
+   },
+   "44": {
+    "Delta_data": 0.00563865674714055,
+    "Delta_arch": 0.0010018329521511854
+   }
+  }
+ }
+}
