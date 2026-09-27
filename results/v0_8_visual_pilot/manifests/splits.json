@@ -1,0 +1,81 @@
+{
+  "train": {
+    "layouts": [
+      "L0",
+      "L1",
+      "L2"
+    ],
+    "groups": [
+      "L0_G00",
+      "L0_G01",
+      "L0_G02",
+      "L0_G03",
+      "L0_G04",
+      "L0_G05",
+      "L0_G06",
+      "L0_G07",
+      "L1_G00",
+      "L1_G01",
+      "L1_G02",
+      "L1_G03",
+      "L1_G04",
+      "L1_G05",
+      "L1_G06",
+      "L1_G07",
+      "L2_G00",
+      "L2_G01",
+      "L2_G02",
+      "L2_G03",
+      "L2_G04",
+      "L2_G05",
+      "L2_G06",
+      "L2_G07"
+    ],
+    "n_episodes": 96,
+    "n_windows": 672
+  },
+  "val": {
+    "layouts": [
+      "L3"
+    ],
+    "groups": [
+      "L3_G00",
+      "L3_G01",
+      "L3_G02",
+      "L3_G03",
+      "L3_G04",
+      "L3_G05",
+      "L3_G06",
+      "L3_G07"
+    ],
+    "n_episodes": 32,
+    "n_windows": 224
+  },
+  "test": {
+    "layouts": [
+      "L4",
+      "L5"
+    ],
+    "groups": [
+      "L4_G00",
+      "L4_G01",
+      "L4_G02",
+      "L4_G03",
+      "L4_G04",
+      "L4_G05",
+      "L4_G06",
+      "L4_G07",
+      "L5_G00",
+      "L5_G01",
+      "L5_G02",
+      "L5_G03",
+      "L5_G04",
+      "L5_G05",
+      "L5_G06",
+      "L5_G07"
+    ],
+    "n_episodes": 64,
+    "n_windows": 448
+  },
+  "rule": "layout-level split: train L0-L2 / val L3 / test L4-L5; \u8840\u7f18(\u5e03\u5c40/group/\u5206\u652f/\u91cd\u590d/\u6e90\u811a\u672c)\u6574\u4f53\u5207\u5206"
+}

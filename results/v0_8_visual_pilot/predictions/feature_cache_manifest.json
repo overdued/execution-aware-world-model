@@ -1,0 +1,13 @@
+{
+  "n_windows": 1344,
+  "n_episodes": 192,
+  "feature_cache_sha256": "0f3b24967451a9f96378a18513bb36ebaa3089384fdb19cbdd97b3362b3d7b81",
+  "norm_fit_split": "train",
+  "clip_rules": {
+    "ctx": "first_seen<=origin last16",
+    "tgt1s": "(origin,origin+50] first16",
+    "tgt2s": "(origin,origin+100] first32"
+  },
+  "spatial_pool": "4x4 mean",
+  "encoder": "vjepa2-vitl-fpc64-256@b3c1679"
+}

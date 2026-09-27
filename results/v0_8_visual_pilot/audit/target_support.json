@@ -1,0 +1,11 @@
+{
+  "n_episodes": 192,
+  "rgb_frames_per_ep": [
+    227
+  ],
+  "terminations": {
+    "schedule_end": 192
+  },
+  "frame_interval_s": 0.06,
+  "first_frame_time_s": 0.02
+}
