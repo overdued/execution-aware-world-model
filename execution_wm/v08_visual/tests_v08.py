@@ -39,12 +39,13 @@ def t1_window_causality():
 
 def t2_forward_invariance_to_target():
     torch.manual_seed(0)
-    B, L, H = 4, 40, 20
+    B = 4
+    L, H = model_v08.L_HIST, model_v08.H_FUT
     ctx = torch.randn(B, model_v08.T_CTX_TOK, model_v08.D_VIS)
-    hist = torch.randn(B, L, 48 + 3)
-    fut = torch.randn(B, H, 3)
+    hist = torch.randn(B, L, model_v08.PROPRIO_DIM + model_v08.CMD_DIM)
+    fut = torch.randn(B, H, model_v08.CMD_DIM)
     for variant in ("V-DIRECT", "V-AUX", "V-EXEC"):
-        m = model_v08.build(variant, seed=0, fut_horizon=H).eval()
+        m = model_v08.build(variant, seed=0).eval()
         # 模型签名不含任何 target 参数——契约层面杜绝泄漏
         import inspect
         params = set(inspect.signature(m.forward).parameters)
@@ -58,6 +59,29 @@ def t2_forward_invariance_to_target():
                     continue
                 assert torch.equal(o1[k], o2[k]), f"{variant}.{k} changed"
         print(f"T2 PASS ({variant}): forward invariant, params={model_v08.n_params(m)}")
+
+
+def t2b_exec_grad_shared_trunk():
+    """任务书 §C3：L_exec 必须对 V-AUX 的共享时序编码器 R 产生非零梯度，
+    否则不能称辅助监督对照。V-EXEC 同样检查（stop_gradient 只断 P 侧）。"""
+    B = 4
+    ctx = torch.randn(B, model_v08.T_CTX_TOK, model_v08.D_VIS)
+    hist = torch.randn(B, model_v08.L_HIST, model_v08.PROPRIO_DIM + model_v08.CMD_DIM)
+    fut = torch.randn(B, model_v08.H_FUT, model_v08.CMD_DIM)
+    e_gt = torch.randn(B, model_v08.H_FUT * model_v08.CMD_DIM)
+    for variant in ("V-AUX", "V-EXEC"):
+        m = model_v08.build(variant, seed=0)
+        out = m(ctx, hist, fut)
+        loss = (out["e_hat"] - e_gt).abs().mean()
+        loss.backward()
+        for name, p in (("hist_gru", m.hist_gru), ("r_trunk", m.r_trunk)):
+            g = sum(q.grad.abs().sum().item() for q in p.parameters() if q.grad is not None)
+            assert g > 0, f"{variant}.{name}: zero grad from L_exec"
+        # P 侧参数不应从 L_exec 单独反传（V-EXEC 的 e_cond 输入已 detach）
+        if variant == "V-EXEC":
+            g = sum(q.grad.abs().sum().item() for q in m.e_cond.parameters() if q.grad is not None)
+            assert g == 0, "stop_gradient(Ehat) broken: e_cond got grad from L_exec"
+        print(f"T2b PASS ({variant}): L_exec -> R nonzero grad; stop_gradient intact")
 
 
 def t3_context_cache_invariance(device="cuda"):
@@ -95,6 +119,7 @@ def t4_encoder_noncausal_guard(device="cuda"):
 def main():
     t1_window_causality()
     t2_forward_invariance_to_target()
+    t2b_exec_grad_shared_trunk()
     t3_context_cache_invariance()
     t4_encoder_noncausal_guard()
     print("ALL B4 TESTS PASS")
