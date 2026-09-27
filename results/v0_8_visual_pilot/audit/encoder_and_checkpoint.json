@@ -1,0 +1,34 @@
+{
+  "encoder": "facebook/vjepa2-vitl-fpc64-256（原版 V-JEPA 2 ViT-L/16 256 预训练视频编码器，非 AC predictor）",
+  "source": "HuggingFace Hub（官方 Meta 发布）；download.pytorch.org 系源在本网络不可达，HF 通道实测可用",
+  "hf_snapshot_commit": "b3c1679b7c34d3255ef3547f27c7b226aefab26f",
+  "license": "MIT（snapshot README.md 元数据）",
+  "files_sha256": {
+    "model.safetensors": "25466aef85727d16546c6cf8c99f12fcfad9cbca8225d45f23685e2e025b786b",
+    "config.json": "3dec96fe962e94e569182d3a7b9ef0dd74b6b8c89c337a428e43e10d593e70c9",
+    "video_preprocessor_config.json": "d2fab4418fc0390b62c4cd72ade56908a7929f80c62288adbe10dd8d23421227",
+    "README.md": "65f3dde72ddc07cf28e25cf11680626bf9e7fbf1d3a8b20695f878c070555212"
+  },
+  "weights_integrity": "正式预训练权重（safetensors 1.30 GB），非随机初始化",
+  "config_facts": {
+    "hidden_size": 1024, "patch_size": 16, "tubelet_size": 2,
+    "image_size": 256, "frames_per_clip_config": 64,
+    "num_hidden_layers": 24, "num_attention_heads": 16
+  },
+  "preprocessing": {
+    "library": "transformers 4.57.6 VJEPA2VideoProcessor",
+    "input_key": "pixel_values_videos [B, T, 3, 256, 256] float32",
+    "resize": "shortest_edge 292 + center_crop 256（我方输入已为 256x256，resize 为恒等附近）",
+    "normalize": "mean [0.485,0.456,0.406], std [0.229,0.224,0.225]，rescale 1/255"
+  },
+  "clip_length_verified": {
+    "tested_frames": 16, "supported": true,
+    "output_shape": "[B, 2048, 1024] = 8 temporal (16/2 tubelet) x 256 spatial (16x16 patch) tokens",
+    "note": "config frames_per_clip=64 是预训练长度；16 帧短 clip 实测支持并冻结为本轮口径（B4 要求核验后冻结）"
+  },
+  "frozen": "encoder.eval()，全参数 requires_grad=False；仅使用 encoder 子模块（303,885,312 参数），不使用 predictor/AC 头",
+  "determinism": "同一输入两次前向输出逐位相同（torch.equal=True）；encoder-only 与整模型 encoder 输出完全一致（max diff 0.0）",
+  "sanity": "输出有限、非恒定（token 方差均值 4.78）",
+  "perf_measured": {"cuda_fwd_16f_256_ms": 165, "peak_gib": 1.25, "device": "RTX 4090"},
+  "verified_at": "2026-09-27"
+}

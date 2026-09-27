@@ -1,0 +1,33 @@
+{
+  "origin_tick": 50,
+  "lead_s": 1.0,
+  "n_ctx": 16,
+  "n_tgt": 16,
+  "groups": {
+    "G00": {
+      "shift1_maxdiff": 4.046693801879883,
+      "same_cmd_ctx_maxdiff": 5.645978927612305,
+      "diff_cmd_tgt_pairwise_max": 8.894380569458008,
+      "diff_cmd_tgt_pairwise_mean": 6.98567533493042
+    },
+    "G01": {
+      "shift1_maxdiff": 2.6803460121154785,
+      "same_cmd_ctx_maxdiff": 1.1803390979766846,
+      "diff_cmd_tgt_pairwise_max": 7.688983917236328,
+      "diff_cmd_tgt_pairwise_mean": 5.636332988739014
+    },
+    "G02": {
+      "shift1_maxdiff": 3.1165056228637695,
+      "same_cmd_ctx_maxdiff": 1.981345772743225,
+      "diff_cmd_tgt_pairwise_max": 7.108414649963379,
+      "diff_cmd_tgt_pairwise_mean": 6.006828308105469
+    }
+  },
+  "channel_var": {
+    "n_tokens": 192,
+    "min": 0.012075869366526604,
+    "median": 0.1919616311788559,
+    "max": 6.948000907897949,
+    "dead_channels_var_lt_1e-8": 0
+  }
+}

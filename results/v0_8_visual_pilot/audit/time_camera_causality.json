@@ -1,0 +1,19 @@
+{
+  "n_episodes": 12,
+  "frames_per_episode": [
+    227
+  ],
+  "frame_interval_s": {
+    "uniq": [
+      0.06
+    ],
+    "first_frame_time_s": 0.02
+  },
+  "ctrl_tick_gap_uniq": [
+    3
+  ],
+  "first_seen_lag_ticks": {
+    "min": -1,
+    "max": -1
+  }
+}

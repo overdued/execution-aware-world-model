@@ -1,0 +1,2383 @@
+{
+  "summary": {
+    "dir_a_camera": "/media/hdd1/yuhang/datasets/execution_wm/v0_8_smoke",
+    "dir_b_no_camera": "/media/hdd1/yuhang/datasets/execution_wm/v0_7_smoke",
+    "n_episodes_compared": 12,
+    "worst_per_channel": {
+      "base_position": {
+        "max_abs_diff": 0.0,
+        "bitwise_equal": true
+      },
+      "base_orientation": {
+        "max_abs_diff": 0.0,
+        "bitwise_equal": true
+      },
+      "base_linear_velocity_world": {
+        "max_abs_diff": 0.0,
+        "bitwise_equal": true
+      },
+      "base_linear_velocity_body": {
+        "max_abs_diff": 0.0,
+        "bitwise_equal": true
+      },
+      "base_angular_velocity": {
+        "max_abs_diff": 0.0,
+        "bitwise_equal": true
+      },
+      "execution": {
+        "max_abs_diff": 0.0,
+        "bitwise_equal": true
+      },
+      "residual": {
+        "max_abs_diff": 0.0,
+        "bitwise_equal": true
+      },
+      "u_consumed": {
+        "max_abs_diff": 0.0,
+        "bitwise_equal": true
+      },
+      "joint_position": {
+        "max_abs_diff": 0.0,
+        "bitwise_equal": true
+      },
+      "joint_velocity": {
+        "max_abs_diff": 0.0,
+        "bitwise_equal": true
+      },
+      "joint_command": {
+        "max_abs_diff": 0.0,
+        "bitwise_equal": true
+      },
+      "applied_torque": {
+        "max_abs_diff": 0.0,
+        "bitwise_equal": true
+      },
+      "feet_contact": {
+        "max_abs_diff": 0.0,
+        "bitwise_equal": true
+      },
+      "foot_velocity": {
+        "max_abs_diff": 0.0,
+        "bitwise_equal": true
+      },
+      "imu_angular_velocity": {
+        "max_abs_diff": 0.0,
+        "bitwise_equal": true
+      },
+      "imu_linear_acceleration": {
+        "max_abs_diff": 0.0,
+        "bitwise_equal": true
+      },
+      "projected_gravity": {
+        "max_abs_diff": 0.0,
+        "bitwise_equal": true
+      },
+      "cmd_vel": {
+        "max_abs_diff": 0.0,
+        "bitwise_equal": true
+      },
+      "phase": {
+        "max_abs_diff": 0.0,
+        "bitwise_equal": true
+      },
+      "sim_time": {
+        "max_abs_diff": 0.0,
+        "bitwise_equal": true
+      },
+      "anchor_base_position": {
+        "max_abs_diff": 0.0,
+        "bitwise_equal": true
+      },
+      "anchor_base_orientation": {
+        "max_abs_diff": 0.0,
+        "bitwise_equal": true
+      },
+      "anchor_base_lin_vel_w": {
+        "max_abs_diff": 0.0,
+        "bitwise_equal": true
+      },
+      "anchor_base_ang_vel_w": {
+        "max_abs_diff": 0.0,
+        "bitwise_equal": true
+      },
+      "anchor_joint_position": {
+        "max_abs_diff": 0.0,
+        "bitwise_equal": true
+      },
+      "anchor_joint_velocity": {
+        "max_abs_diff": 0.0,
+        "bitwise_equal": true
+      }
+    }
+  },
+  "episodes": [
+    {
+      "episode": "train/G00/nominal/ep_00000.npz",
+      "channels": {
+        "base_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.2380534410476685
+        },
+        "base_orientation": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.999997615814209
+        },
+        "base_linear_velocity_world": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.7406584024429321
+        },
+        "base_linear_velocity_body": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.741271436214447
+        },
+        "base_angular_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.4680724143981934
+        },
+        "execution": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.8342573642730713
+        },
+        "residual": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.9845550060272217
+        },
+        "u_consumed": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.6499999761581421
+        },
+        "joint_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 2.369577169418335
+        },
+        "joint_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 19.50678253173828
+        },
+        "joint_command": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 2.9482791423797607
+        },
+        "applied_torque": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 23.5
+        },
+        "feet_contact": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "foot_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 4.298087120056152
+        },
+        "imu_angular_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.4680724143981934
+        },
+        "imu_linear_acceleration": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 66.1719970703125
+        },
+        "projected_gravity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "cmd_vel": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.6499999761581421
+        },
+        "phase": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "sim_time": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 13.6
+        },
+        "anchor_base_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.4000000059604645
+        },
+        "anchor_base_orientation": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.9451092481613159
+        },
+        "anchor_base_lin_vel_w": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        },
+        "anchor_base_ang_vel_w": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        },
+        "anchor_joint_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.5
+        },
+        "anchor_joint_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        }
+      },
+      "len_a": 680,
+      "len_b": 680
+    },
+    {
+      "episode": "train/G00/nominal/ep_00001.npz",
+      "channels": {
+        "base_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.8051424026489258
+        },
+        "base_orientation": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.9683363437652588
+        },
+        "base_linear_velocity_world": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.7406584024429321
+        },
+        "base_linear_velocity_body": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.741271436214447
+        },
+        "base_angular_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.4680724143981934
+        },
+        "execution": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.8273487687110901
+        },
+        "residual": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0402624607086182
+        },
+        "u_consumed": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.6499999761581421
+        },
+        "joint_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 2.352996826171875
+        },
+        "joint_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 16.362428665161133
+        },
+        "joint_command": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 2.9482791423797607
+        },
+        "applied_torque": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 19.363096237182617
+        },
+        "feet_contact": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "foot_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 3.375317335128784
+        },
+        "imu_angular_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.4680724143981934
+        },
+        "imu_linear_acceleration": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 66.1719970703125
+        },
+        "projected_gravity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "cmd_vel": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.6499999761581421
+        },
+        "phase": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "sim_time": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 13.6
+        },
+        "anchor_base_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.4000000059604645
+        },
+        "anchor_base_orientation": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.9451092481613159
+        },
+        "anchor_base_lin_vel_w": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        },
+        "anchor_base_ang_vel_w": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        },
+        "anchor_joint_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.5
+        },
+        "anchor_joint_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        }
+      },
+      "len_a": 680,
+      "len_b": 680
+    },
+    {
+      "episode": "train/G00/nominal/ep_00002.npz",
+      "channels": {
+        "base_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.039515733718872
+        },
+        "base_orientation": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.9880171418190002
+        },
+        "base_linear_velocity_world": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.7406584024429321
+        },
+        "base_linear_velocity_body": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.741271436214447
+        },
+        "base_angular_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.8295609951019287
+        },
+        "execution": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.7477365732192993
+        },
+        "residual": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.7726365923881531
+        },
+        "u_consumed": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.6499999761581421
+        },
+        "joint_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 2.4155468940734863
+        },
+        "joint_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 15.69510555267334
+        },
+        "joint_command": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 2.9482791423797607
+        },
+        "applied_torque": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 22.826988220214844
+        },
+        "feet_contact": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "foot_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 3.6830992698669434
+        },
+        "imu_angular_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.8295609951019287
+        },
+        "imu_linear_acceleration": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 66.1719970703125
+        },
+        "projected_gravity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "cmd_vel": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.6499999761581421
+        },
+        "phase": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "sim_time": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 13.6
+        },
+        "anchor_base_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.4000000059604645
+        },
+        "anchor_base_orientation": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.9451092481613159
+        },
+        "anchor_base_lin_vel_w": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        },
+        "anchor_base_ang_vel_w": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        },
+        "anchor_joint_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.5
+        },
+        "anchor_joint_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        }
+      },
+      "len_a": 680,
+      "len_b": 680
+    },
+    {
+      "episode": "train/G00/nominal/ep_00003.npz",
+      "channels": {
+        "base_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.8617587685585022
+        },
+        "base_orientation": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.9469718933105469
+        },
+        "base_linear_velocity_world": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.7406584024429321
+        },
+        "base_linear_velocity_body": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.741271436214447
+        },
+        "base_angular_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.4680724143981934
+        },
+        "execution": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.8897760510444641
+        },
+        "residual": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.985958456993103
+        },
+        "u_consumed": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.6499999761581421
+        },
+        "joint_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 2.3390920162200928
+        },
+        "joint_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 16.521087646484375
+        },
+        "joint_command": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 3.3643412590026855
+        },
+        "applied_torque": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 23.121610641479492
+        },
+        "feet_contact": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "foot_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 4.394150733947754
+        },
+        "imu_angular_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.4680724143981934
+        },
+        "imu_linear_acceleration": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 66.1719970703125
+        },
+        "projected_gravity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "cmd_vel": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.6499999761581421
+        },
+        "phase": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "sim_time": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 13.620000000000001
+        },
+        "anchor_base_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.4000000059604645
+        },
+        "anchor_base_orientation": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.9451092481613159
+        },
+        "anchor_base_lin_vel_w": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        },
+        "anchor_base_ang_vel_w": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        },
+        "anchor_joint_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.5
+        },
+        "anchor_joint_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        }
+      },
+      "len_a": 681,
+      "len_b": 681
+    },
+    {
+      "episode": "train/G01/nominal/ep_00004.npz",
+      "channels": {
+        "base_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.6637253761291504
+        },
+        "base_orientation": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.8363783955574036
+        },
+        "base_linear_velocity_world": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.7594398856163025
+        },
+        "base_linear_velocity_body": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.7600076794624329
+        },
+        "base_angular_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.3517553806304932
+        },
+        "execution": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.9755778908729553
+        },
+        "residual": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.7787622809410095
+        },
+        "u_consumed": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.7310624122619629
+        },
+        "joint_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 2.326724052429199
+        },
+        "joint_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 16.56280517578125
+        },
+        "joint_command": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 3.0358188152313232
+        },
+        "applied_torque": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 23.5
+        },
+        "feet_contact": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "foot_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 4.563529968261719
+        },
+        "imu_angular_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.3517553806304932
+        },
+        "imu_linear_acceleration": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 60.844383239746094
+        },
+        "projected_gravity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "cmd_vel": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.6499999761581421
+        },
+        "phase": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "sim_time": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 13.6
+        },
+        "anchor_base_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.4000000059604645
+        },
+        "anchor_base_orientation": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.8270359039306641
+        },
+        "anchor_base_lin_vel_w": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        },
+        "anchor_base_ang_vel_w": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        },
+        "anchor_joint_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.5
+        },
+        "anchor_joint_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        }
+      },
+      "len_a": 680,
+      "len_b": 680
+    },
+    {
+      "episode": "train/G01/nominal/ep_00005.npz",
+      "channels": {
+        "base_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.207037091255188
+        },
+        "base_orientation": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.8620039224624634
+        },
+        "base_linear_velocity_world": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.7594398856163025
+        },
+        "base_linear_velocity_body": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.7600076794624329
+        },
+        "base_angular_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.3517553806304932
+        },
+        "execution": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.9755778908729553
+        },
+        "residual": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.7787622809410095
+        },
+        "u_consumed": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.7310624122619629
+        },
+        "joint_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 2.3737566471099854
+        },
+        "joint_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 11.687775611877441
+        },
+        "joint_command": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 3.28806471824646
+        },
+        "applied_torque": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 17.705625534057617
+        },
+        "feet_contact": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "foot_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 3.4521234035491943
+        },
+        "imu_angular_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.3517553806304932
+        },
+        "imu_linear_acceleration": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 60.844383239746094
+        },
+        "projected_gravity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "cmd_vel": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.6499999761581421
+        },
+        "phase": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "sim_time": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 13.6
+        },
+        "anchor_base_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.4000000059604645
+        },
+        "anchor_base_orientation": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.8270359039306641
+        },
+        "anchor_base_lin_vel_w": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        },
+        "anchor_base_ang_vel_w": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        },
+        "anchor_joint_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.5
+        },
+        "anchor_joint_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        }
+      },
+      "len_a": 680,
+      "len_b": 680
+    },
+    {
+      "episode": "train/G01/nominal/ep_00006.npz",
+      "channels": {
+        "base_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.8577695488929749
+        },
+        "base_orientation": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.9132022857666016
+        },
+        "base_linear_velocity_world": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.7594398856163025
+        },
+        "base_linear_velocity_body": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.7622553110122681
+        },
+        "base_angular_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.3517553806304932
+        },
+        "execution": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.8172134757041931
+        },
+        "residual": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.2953789234161377
+        },
+        "u_consumed": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.7310624122619629
+        },
+        "joint_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 2.2578864097595215
+        },
+        "joint_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 15.206720352172852
+        },
+        "joint_command": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 3.146759033203125
+        },
+        "applied_torque": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 23.5
+        },
+        "feet_contact": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "foot_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 3.7191154956817627
+        },
+        "imu_angular_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.3517553806304932
+        },
+        "imu_linear_acceleration": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 60.844383239746094
+        },
+        "projected_gravity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "cmd_vel": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.6499999761581421
+        },
+        "phase": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "sim_time": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 13.6
+        },
+        "anchor_base_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.4000000059604645
+        },
+        "anchor_base_orientation": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.8270359039306641
+        },
+        "anchor_base_lin_vel_w": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        },
+        "anchor_base_ang_vel_w": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        },
+        "anchor_joint_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.5
+        },
+        "anchor_joint_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        }
+      },
+      "len_a": 680,
+      "len_b": 680
+    },
+    {
+      "episode": "train/G01/nominal/ep_00007.npz",
+      "channels": {
+        "base_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.1716041564941406
+        },
+        "base_orientation": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.8519448041915894
+        },
+        "base_linear_velocity_world": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.7594398856163025
+        },
+        "base_linear_velocity_body": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.7600076794624329
+        },
+        "base_angular_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.3517553806304932
+        },
+        "execution": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.7843092083930969
+        },
+        "residual": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.2766218185424805
+        },
+        "u_consumed": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.7310624122619629
+        },
+        "joint_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 2.330538511276245
+        },
+        "joint_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 13.246585845947266
+        },
+        "joint_command": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 3.144516706466675
+        },
+        "applied_torque": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 19.575563430786133
+        },
+        "feet_contact": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "foot_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 3.3694469928741455
+        },
+        "imu_angular_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.3517553806304932
+        },
+        "imu_linear_acceleration": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 60.844383239746094
+        },
+        "projected_gravity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "cmd_vel": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.6499999761581421
+        },
+        "phase": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "sim_time": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 13.620000000000001
+        },
+        "anchor_base_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.4000000059604645
+        },
+        "anchor_base_orientation": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.8270359039306641
+        },
+        "anchor_base_lin_vel_w": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        },
+        "anchor_base_ang_vel_w": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        },
+        "anchor_joint_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.5
+        },
+        "anchor_joint_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        }
+      },
+      "len_a": 681,
+      "len_b": 681
+    },
+    {
+      "episode": "train/G02/nominal/ep_00008.npz",
+      "channels": {
+        "base_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.8210475444793701
+        },
+        "base_orientation": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.99994295835495
+        },
+        "base_linear_velocity_world": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.7257869839668274
+        },
+        "base_linear_velocity_body": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.7259017825126648
+        },
+        "base_angular_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.4922963380813599
+        },
+        "execution": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.9113127589225769
+        },
+        "residual": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.329077124595642
+        },
+        "u_consumed": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.8382368087768555
+        },
+        "joint_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 2.2986114025115967
+        },
+        "joint_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 18.725910186767578
+        },
+        "joint_command": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 3.1719651222229004
+        },
+        "applied_torque": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 23.5
+        },
+        "feet_contact": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "foot_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 4.731928825378418
+        },
+        "imu_angular_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.492296576499939
+        },
+        "imu_linear_acceleration": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 57.635955810546875
+        },
+        "projected_gravity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "cmd_vel": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.6499999761581421
+        },
+        "phase": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "sim_time": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 13.6
+        },
+        "anchor_base_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.4000000059604645
+        },
+        "anchor_base_orientation": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.9863824248313904
+        },
+        "anchor_base_lin_vel_w": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        },
+        "anchor_base_ang_vel_w": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        },
+        "anchor_joint_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.5
+        },
+        "anchor_joint_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        }
+      },
+      "len_a": 680,
+      "len_b": 680
+    },
+    {
+      "episode": "train/G02/nominal/ep_00009.npz",
+      "channels": {
+        "base_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 2.163695812225342
+        },
+        "base_orientation": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.9988622665405273
+        },
+        "base_linear_velocity_world": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.7257869839668274
+        },
+        "base_linear_velocity_body": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.7296231985092163
+        },
+        "base_angular_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.365175724029541
+        },
+        "execution": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.7436046004295349
+        },
+        "residual": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0664070844650269
+        },
+        "u_consumed": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.8382368087768555
+        },
+        "joint_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 2.370110511779785
+        },
+        "joint_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 19.3037166595459
+        },
+        "joint_command": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 3.037017345428467
+        },
+        "applied_torque": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 20.73594093322754
+        },
+        "feet_contact": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "foot_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 4.649351596832275
+        },
+        "imu_angular_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.365175724029541
+        },
+        "imu_linear_acceleration": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 57.635955810546875
+        },
+        "projected_gravity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "cmd_vel": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.6499999761581421
+        },
+        "phase": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "sim_time": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 13.6
+        },
+        "anchor_base_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.4000000059604645
+        },
+        "anchor_base_orientation": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.9863824248313904
+        },
+        "anchor_base_lin_vel_w": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        },
+        "anchor_base_ang_vel_w": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        },
+        "anchor_joint_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.5
+        },
+        "anchor_joint_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        }
+      },
+      "len_a": 680,
+      "len_b": 680
+    },
+    {
+      "episode": "train/G02/nominal/ep_00010.npz",
+      "channels": {
+        "base_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.694465160369873
+        },
+        "base_orientation": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.9999990463256836
+        },
+        "base_linear_velocity_world": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.7294660210609436
+        },
+        "base_linear_velocity_body": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.7341412901878357
+        },
+        "base_angular_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.365175724029541
+        },
+        "execution": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.855949878692627
+        },
+        "residual": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.9010320901870728
+        },
+        "u_consumed": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.8382368087768555
+        },
+        "joint_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 2.3437952995300293
+        },
+        "joint_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 10.310521125793457
+        },
+        "joint_command": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 2.7010338306427
+        },
+        "applied_torque": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 16.142925262451172
+        },
+        "feet_contact": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "foot_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 3.2700095176696777
+        },
+        "imu_angular_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.365175724029541
+        },
+        "imu_linear_acceleration": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 57.635955810546875
+        },
+        "projected_gravity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "cmd_vel": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.6499999761581421
+        },
+        "phase": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "sim_time": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 13.6
+        },
+        "anchor_base_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.4000000059604645
+        },
+        "anchor_base_orientation": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.9863824248313904
+        },
+        "anchor_base_lin_vel_w": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        },
+        "anchor_base_ang_vel_w": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        },
+        "anchor_joint_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.5
+        },
+        "anchor_joint_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        }
+      },
+      "len_a": 680,
+      "len_b": 680
+    },
+    {
+      "episode": "train/G02/nominal/ep_00011.npz",
+      "channels": {
+        "base_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.546478807926178
+        },
+        "base_orientation": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.9991905093193054
+        },
+        "base_linear_velocity_world": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.7257869839668274
+        },
+        "base_linear_velocity_body": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.7418507933616638
+        },
+        "base_angular_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.365175724029541
+        },
+        "execution": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.7418507933616638
+        },
+        "residual": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.7418507933616638
+        },
+        "u_consumed": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.8382368087768555
+        },
+        "joint_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 2.329871892929077
+        },
+        "joint_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 18.174755096435547
+        },
+        "joint_command": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 3.181541919708252
+        },
+        "applied_torque": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 23.157398223876953
+        },
+        "feet_contact": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "foot_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 4.272954940795898
+        },
+        "imu_angular_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.365175724029541
+        },
+        "imu_linear_acceleration": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 57.635955810546875
+        },
+        "projected_gravity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "cmd_vel": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.6499999761581421
+        },
+        "phase": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.0
+        },
+        "sim_time": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 13.620000000000001
+        },
+        "anchor_base_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.4000000059604645
+        },
+        "anchor_base_orientation": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.9863824248313904
+        },
+        "anchor_base_lin_vel_w": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        },
+        "anchor_base_ang_vel_w": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        },
+        "anchor_joint_position": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 1.5
+        },
+        "anchor_joint_velocity": {
+          "status": "ok",
+          "bitwise_equal": true,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "ref_scale": 0.0
+        }
+      },
+      "len_a": 681,
+      "len_b": 681
+    }
+  ]
+}
