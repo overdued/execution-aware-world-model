@@ -1,7 +1,7 @@
 # V0.8 Review Package Manifest
 
 > 打包日期：2026-09-27
-> 来源 worktree：`~/cvpr_embed-v08` · 分支 `exp/cvpr-v08-visual-pilot` · commit `d0fc311`
+> 来源 worktree：`~/cvpr_embed-v08` · 分支 `exp/cvpr-v08-visual-pilot` · commit `95e5050`（结果内容同 `d0fc311`，新增本清单与推送备注）
 > （GitHub 公开镜像分支：`exp/cvpr-v08-visual-pilot-slim`，内容一致但不含大二进制）
 > 冻结协议：commit `0b6feb7`（采集前）；偏离登记 D1–D2 见 `report/V0_8_DEVIATIONS.md`
 
@@ -49,4 +49,4 @@
 ## 合规声明
 
 本包不含任何 token、.env、SSH key 或其他凭据；未重新训练、未修改任何结果；
-所有数值与 git commit `d0fc311` 一致。
+所有数值与 git commit `95e5050`（结果内容同 `d0fc311`，新增本清单与推送备注） 一致。
