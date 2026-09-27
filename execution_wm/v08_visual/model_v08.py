@@ -20,7 +20,7 @@ T_CTX_TOK = 8                  # context clip 16 帧 / tubelet 2
 S_TOK = 16                     # 4×4 空间 mean-pool
 T_TGT_TOK = {1.0: 8, 2.0: 16}
 D_TOK = 128                    # factored decoder 的 token embedding 维度
-PROPRIO_DIM = 48               # deployable-candidate 本体（privileged 已屏蔽）
+PROPRIO_DIM = 40               # deployable-candidate 本体（PROPRIO_SCHEMA.dim，privileged 已屏蔽）
 CMD_DIM = 3
 L_HIST, H_FUT = 20, 40         # 20Hz：过去 1s / 未来 2s
 
