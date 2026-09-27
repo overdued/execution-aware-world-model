@@ -54,4 +54,8 @@ NEXT_MAIN_ACTION: C
 未做：Risk 场景、真机控制、V-JEPA 全参微调、在线纠正、backbone 扩展。
 未删任何失败/负结果（辅助监督劣化、E 弱依赖均如实写入主结论）；
 未为过门改指标；未按测试成绩选 checkpoint（全部 val 最优，实际为 step 1000）；
-未修改 V0.7 旧结果与旧预注册；未 push 任何远端。
+未修改 V0.7 旧结果与旧预注册。
+
+> 后续备注（2026-09-27）：应用户要求，结果已推送至 GitHub 公开仓库
+> `overdued/execution-aware-world-model` 的 `exp/cvpr-v08-visual-pilot-slim` 分支
+> （大二进制未上传，血缘见 `BIG_FILES_LOCAL.md`）；上述实验期约束均未被违反。
