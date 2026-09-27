@@ -22,6 +22,11 @@ from torch.utils.data import DataLoader
 
 from execution_wm.v08_visual.dataset_v08 import V08Windows
 from execution_wm.v08_visual.eval_v08 import RUNS, load_run
+
+
+def _existing_runs(results):
+    return [r for r in RUNS
+            if (Path(results) / "checkpoints" / r / "summary.json").exists()]
 from execution_wm.v08_visual.train_v08 import collate
 
 NOISE_FLOOR_MULT = 1.5
@@ -60,7 +65,7 @@ def matching(results, raw_root, device="cuda"):
         noise[g]["near_indistinguishable"] = bool(
             min(cands) <= NOISE_FLOOR_MULT * max(noise[g]["repeat_floor"], 1e-9))
     rows = []
-    for run in RUNS:
+    for run in _existing_runs(rr):
         model, summ, _ = load_run(rr, run, device)
         for g, br in sorted(groups.items()):
             zs = [_norm_tgt(ds, ds.df.iloc[br[b]]["window_id"]) for b in (0, 1, 2)]
@@ -115,7 +120,7 @@ def sensitivity(results, raw_root, device="cuda"):
     ds = V08Windows(rr, raw_root, "test")
     groups = _matching_index(ds)
     rows = []
-    for run in RUNS:
+    for run in _existing_runs(rr):
         if not run.startswith("VEXEC"):
             continue
         model, summ, _ = load_run(rr, run, device)
@@ -130,8 +135,8 @@ def sensitivity(results, raw_root, device="cuda"):
             e_hat = base["e_hat"]
             conds = {"E_hat": None,
                      "E_eq_U": (fut.reshape(1, -1) - torch.as_tensor(
-                         ds.e_mean, device=device)) / torch.as_tensor(
-                         ds.e_std, device=device),
+                         ds.e_mean.astype(np.float32), device=device)) / torch.as_tensor(
+                         ds.e_std.astype(np.float32), device=device),
                      "zero_E": torch.zeros_like(e_hat),
                      "oracle_E_diagnostic": e_true}
             for name, override in conds.items():

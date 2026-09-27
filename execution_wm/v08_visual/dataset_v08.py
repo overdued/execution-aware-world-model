@@ -49,7 +49,8 @@ class V08Windows(Dataset):
         self.norm = {s: (self.cache[f"_norm/{s}_mean"], self.cache[f"_norm/{s}_std"])
                      for s in ("ctx", "tgt1s", "tgt2s")}
         if norm_stats is not None:
-            self.e_mean, self.e_std = norm_stats
+            self.e_mean, self.e_std = (np.asarray(norm_stats[0], dtype=np.float32),
+                                       np.asarray(norm_stats[1], dtype=np.float32))
         elif fit_norm:
             self.e_mean, self.e_std = self._fit_e_norm()
             (rr / "manifests").mkdir(exist_ok=True)
@@ -59,7 +60,8 @@ class V08Windows(Dataset):
         else:
             nj = rr / "manifests/e_norm.json"
             d = json.loads(nj.read_text())
-            self.e_mean, self.e_std = np.array(d["mean"]), np.array(d["std"])
+            self.e_mean = np.array(d["mean"], dtype=np.float32)
+            self.e_std = np.array(d["std"], dtype=np.float32)
 
     def _fit_e_norm(self):
         es = []
