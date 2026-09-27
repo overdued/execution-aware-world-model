@@ -19,15 +19,18 @@ from execution_wm.validity_v061.support_pairs import PROPRIO_KEYS
 L_HIST, H_FUT = 20, 40
 
 
-def _load_derived_map(raw_root):
+def _load_derived_map(raw_root, df):
+    """急切加载本 split 需要的全部 20hz 文件到内存（主进程内完成，
+    fork 后只读 COW 共享，杜绝 worker 间共享 fd 的 seek 竞争）。"""
     out = {}
-
-    def _get(split, gid, branch, eid):
-        p = Path(raw_root) / split / gid / f"b{branch}" / f"{eid}.20hz.npz"
-        if str(p) not in out:
-            out[str(p)] = np.load(p)
-        return out[str(p)]
-    return _get
+    for _, r in df.iterrows():
+        p = str(Path(raw_root) / r["split"] / r["group_id"] /
+                f"b{r['branch']}" / f"{r['episode_id']}.20hz.npz")
+        if p not in out:
+            npz = np.load(p)
+            out[p] = {k: npz[k] for k in npz.files}
+    return lambda split, gid, branch, eid: out[
+        str(Path(raw_root) / split / gid / f"b{branch}" / f"{eid}.20hz.npz")]
 
 
 class V08Windows(Dataset):
@@ -37,8 +40,12 @@ class V08Windows(Dataset):
         import pandas as pd
         df = pd.read_csv(rr / "manifests/windows.csv")
         self.df = df[df.split == split].reset_index(drop=True)
-        self.cache = np.load(rr / "predictions/feature_cache.npz")
-        self.get20 = _load_derived_map(raw_root)
+        # 急切加载到内存：NpzFile 惰性 zip 读取在 DataLoader 多 worker fork 下共享
+        # fd，并发 seek/decompress 会数据竞争（曾导致 zlib 解压错误）。只读数组
+        # fork 后是 COW 共享页，不额外占内存。
+        npz = np.load(rr / "predictions/feature_cache.npz")
+        self.cache = {k: npz[k] for k in npz.files}
+        self.get20 = _load_derived_map(raw_root, self.df)
         self.norm = {s: (self.cache[f"_norm/{s}_mean"], self.cache[f"_norm/{s}_std"])
                      for s in ("ctx", "tgt1s", "tgt2s")}
         if norm_stats is not None:

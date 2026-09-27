@@ -1,0 +1,26 @@
+{
+  "run_id": "VAUX_s42",
+  "variant": "V-AUX",
+  "seed": 42,
+  "steps": 30000,
+  "batch": 64,
+  "lr": 0.0003,
+  "wd": 0.0001,
+  "warmup": 500,
+  "lambda_E": 1.0,
+  "dtype": "fp32",
+  "n_train_windows": 672,
+  "n_val_windows": 224,
+  "v07_init": {
+    "gru": "D_R1_s42",
+    "sha": "f8aa11aa99653259",
+    "G": "shape_mismatch_random"
+  },
+  "n_params": 26512632,
+  "best_val_vis2s": 0.611139327287674,
+  "wall_min": 31.507600812117257,
+  "peak_mem_mib": 1188.89013671875,
+  "latency_batch1_ms": 0.24634361267089844,
+  "latency_batch64_ms": 0.6756901741027832,
+  "ckpt_sha": "840bb1cc82d2e38f98b314f8cdf2ffb82a4791eeb25561d017bbde784ba6eed8"
+}
