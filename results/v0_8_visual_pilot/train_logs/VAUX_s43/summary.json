@@ -1,0 +1,26 @@
+{
+  "run_id": "VAUX_s43",
+  "variant": "V-AUX",
+  "seed": 43,
+  "steps": 30000,
+  "batch": 64,
+  "lr": 0.0003,
+  "wd": 0.0001,
+  "warmup": 500,
+  "lambda_E": 1.0,
+  "dtype": "fp32",
+  "n_train_windows": 672,
+  "n_val_windows": 224,
+  "v07_init": {
+    "gru": "D_R1_s43",
+    "sha": "ac9650299dc1252b",
+    "G": "shape_mismatch_random"
+  },
+  "n_params": 26512632,
+  "best_val_vis2s": 0.6107750833034515,
+  "wall_min": 30.380704975128175,
+  "peak_mem_mib": 1188.89013671875,
+  "latency_batch1_ms": 0.3269195556640625,
+  "latency_batch64_ms": 0.644683837890625,
+  "ckpt_sha": "6fe1cdc715ffc68744d303f607158577c4db8d54662e787c216ef8ab68c87f74"
+}

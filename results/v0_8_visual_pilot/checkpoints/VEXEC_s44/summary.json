@@ -1,0 +1,26 @@
+{
+  "run_id": "VEXEC_s44",
+  "variant": "V-EXEC",
+  "seed": 44,
+  "steps": 30000,
+  "batch": 64,
+  "lr": 0.0003,
+  "wd": 0.0001,
+  "warmup": 500,
+  "lambda_E": 1.0,
+  "dtype": "fp32",
+  "n_train_windows": 672,
+  "n_val_windows": 224,
+  "v07_init": {
+    "gru": "D_R1_s44",
+    "sha": "f0c3fa8f32b68377",
+    "G": "shape_mismatch_random"
+  },
+  "n_params": 26525224,
+  "best_val_vis2s": 0.6081489026546478,
+  "wall_min": 30.36094900369644,
+  "peak_mem_mib": 1189.08544921875,
+  "latency_batch1_ms": 0.2704811096191406,
+  "latency_batch64_ms": 0.6480813026428223,
+  "ckpt_sha": "2a1e698fcbec92dc3c3dff242504cbdcb0c1c163553ef03ab95033b4931780d9"
+}

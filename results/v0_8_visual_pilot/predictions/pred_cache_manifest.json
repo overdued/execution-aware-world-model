@@ -1,0 +1,7 @@
+{
+  "file": "pred_cache.npz",
+  "sha256": "d830da2a39e6778336e5b78c1bf1bb9569a11fe41227f6b4deabe8f7718bf512",
+  "n_keys": 16128,
+  "key_format": "<run_id>/<split>/<window_id>/<field: pred_1s|pred_2s|e_hat>",
+  "note": "consolidated from <run>_<split>_preds.npz (18 files, retained); window lineage via manifests/windows.csv"
+}

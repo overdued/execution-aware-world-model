@@ -1,0 +1,26 @@
+{
+  "run_id": "VDIRECT_s43",
+  "variant": "V-DIRECT",
+  "seed": 43,
+  "steps": 30000,
+  "batch": 64,
+  "lr": 0.0003,
+  "wd": 0.0001,
+  "warmup": 500,
+  "lambda_E": 1.0,
+  "dtype": "fp32",
+  "n_train_windows": 672,
+  "n_val_windows": 224,
+  "v07_init": {
+    "gru": "D_R1_s43",
+    "sha": "ac9650299dc1252b",
+    "G": "shape_mismatch_random"
+  },
+  "n_params": 26464256,
+  "best_val_vis2s": 0.5957275927066803,
+  "wall_min": 31.388043359915414,
+  "peak_mem_mib": 1188.0634765625,
+  "latency_batch1_ms": 0.22443771362304688,
+  "latency_batch64_ms": 0.654757022857666,
+  "ckpt_sha": "71c880e17464b8e62f5683391b869ae5993dfd7babb40a5963697756aae7230f"
+}

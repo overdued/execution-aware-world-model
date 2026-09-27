@@ -1,0 +1,24 @@
+{
+  "lr": 0.0003,
+  "wd": 0.0001,
+  "warmup": 500,
+  "lambda_E": 1.0,
+  "dtype": "fp32",
+  "n_train_windows": 672,
+  "n_val_windows": 224,
+  "steps": 30000,
+  "batch": 64,
+  "variants": [
+    "V-DIRECT",
+    "V-AUX",
+    "V-EXEC"
+  ],
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "ckpt_select": "val 2s visual loss (best)",
+  "encoder": "V-JEPA 2 frozen",
+  "feature_pool": "4x4 spatial"
+}
